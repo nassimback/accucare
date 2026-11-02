@@ -2,7 +2,8 @@
 
 React and Vite client design showcase.
 
-- Default homepage and Design 2: `/` and `/design-2/`
+- Default homepage / design selector: `/`
+- Design 2: `/design-2/`
 - Design 4: `/design-4/`
 - Design selector: `/designs.html`
 

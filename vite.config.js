@@ -2,7 +2,15 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), {
+    name: "accucare-design-selector-home",
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        if (req.url?.split("?")[0] === "/") req.url = "/designs.html";
+        next();
+      });
+    },
+  }],
   base: process.env.VITE_BASE_PATH || "/",
   build: {
     rollupOptions: {

@@ -73,3 +73,6 @@ if (basePath !== "/") {
   }
   await prefixAssets(output);
 }
+
+// The client enters through the design selector; each concept has its own URL.
+await writeFile(join(output, "index.html"), await readFile(join(output, "designs.html"), "utf8"));
