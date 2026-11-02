@@ -1,0 +1,2765 @@
+/* Doctean reference: Plus Jakarta Sans / Sora; 30px panels, inverse corners,
+   pill buttons, image carousels, circular links and staggered heading reveals. */
+.dt-site {
+  --dt-accent: rgb(var(--p-accent-rgb));
+  --dt-ink: rgb(var(--p-deep-rgb));
+  --dt-pale: rgb(var(--p-pale-rgb));
+  --dt-muted: rgb(var(--p-muted-rgb));
+  --dt-line: rgb(var(--p-line-rgb));
+  font:
+    400 16px/26px Sora,
+    sans-serif;
+  color: var(--dt-ink);
+  background: var(--dt-pale);
+  overflow: clip;
+}
+.dt-site h1,
+.dt-site h2,
+.dt-site h3,
+.dt-site h4 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  letter-spacing: 0;
+  color: var(--dt-ink);
+  margin-top: 0;
+}
+.dt-site h1 {
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+.dt-site h2 {
+  font-size: 50px;
+  line-height: 62px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.dt-site h3 {
+  font-size: 26px;
+  line-height: 38px;
+  font-weight: 600;
+  margin: 0 0 20px;
+}
+.dt-site p {
+  font:
+    400 16px/26px Sora,
+    sans-serif;
+  color: var(--dt-muted);
+  margin: 0 0 25px;
+}
+.dt-site a,
+.dt-site button {
+  font-family: Sora, sans-serif;
+}
+.dt-site button {
+  border: 0;
+}
+.dt-site a:focus-visible,
+.dt-site button:focus-visible,
+.dt-site summary:focus-visible {
+  outline: 3px solid var(--dt-accent);
+  outline-offset: 5px;
+}
+.dt-container {
+  width: calc(100% - 44px);
+  max-width: 1440px;
+  margin-inline: auto;
+}
+.dt-section {
+  padding: 120px 0;
+}
+.dt-site .dt-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.dt-site .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.dt-site .logo > img {
+  width: 49px;
+  height: 49px;
+}
+.dt-site .logo > span {
+  color: var(--dt-ink);
+  font-family: Sora, sans-serif;
+  font-size: 23px;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+.dt-site .logo small {
+  font-size: 5.5px;
+  letter-spacing: 0.45px;
+}
+.dt-heading .dt-word {
+  display: inline-block;
+  white-space: nowrap;
+  margin-right: 0.23em;
+}
+.dt-heading .dt-word:last-child {
+  margin-right: 0;
+}
+.dt-heading-center {
+  text-align: center;
+}
+.dt-eyebrow {
+  display: inline-block;
+  border-radius: 40px;
+  background: white;
+  padding: 4px 20px;
+  font:
+    500 13px/24px Sora,
+    sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: var(--dt-ink);
+}
+.dt-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background: var(--dt-accent);
+  color: white;
+  border-radius: 100px;
+  padding: 15px 30px;
+  min-height: 50px;
+  font:
+    500 13px/22px Sora,
+    sans-serif;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid transparent !important;
+  transition:
+    color 0.35s,
+    box-shadow 0.35s;
+}
+.dt-button:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--dt-ink);
+  z-index: -1;
+  transform: translateX(-102%);
+  transition: transform 0.45s cubic-bezier(0.2, 0.6, 0.2, 1);
+  border-radius: inherit;
+}
+.dt-button:hover:before {
+  transform: translateX(0);
+}
+.dt-button svg {
+  flex-shrink: 0;
+  transition: transform 0.35s;
+}
+.dt-button:hover svg {
+  transform: translate(3px, -3px);
+}
+.dt-button-outline {
+  border-color: var(--dt-accent) !important;
+  color: var(--dt-ink);
+  background: transparent;
+}
+.dt-button-outline:hover {
+  color: white;
+}
+.dt-skip {
+  position: fixed;
+  top: -100px;
+  left: 20px;
+  background: white;
+  padding: 15px;
+  z-index: 150;
+}
+.dt-skip:focus {
+  top: 10px;
+}
+.dt-topbar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 12px;
+  line-height: 22px;
+  min-height: 58px;
+}
+.dt-topbar > span,
+.dt-topbar > a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.dt-topbar svg {
+  color: var(--dt-accent);
+}
+.dt-topbar .dt-top-phone {
+  margin-left: auto;
+}
+.dt-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: 0 20px;
+  background: var(--dt-pale);
+}
+.dt-header-inner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-height: 92px;
+  max-width: 1880px;
+  margin: auto;
+}
+.dt-navigation {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+  background: white;
+  min-height: 92px;
+  border-radius: 30px 30px 0 0;
+  padding: 0 28px;
+  margin-left: auto;
+  position: relative;
+  flex: 1;
+  justify-content: center;
+}
+.dt-navigation > a,
+.dt-navigation > div > button {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.dt-navigation > a:hover,
+.dt-navigation > a.active,
+.dt-navigation button:hover {
+  color: var(--dt-accent);
+}
+.dt-navigation button {
+  padding: 0;
+  background: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.dt-nav-care {
+  position: relative;
+}
+.dt-care-dropdown {
+  position: absolute;
+  top: 35px;
+  left: -25px;
+  background: white;
+  width: 310px;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 18px;
+  border-radius: 15px;
+  box-shadow: 0 10px 35px #00000019;
+}
+.dt-care-dropdown a {
+  display: block;
+  font-size: 13px;
+  padding: 10px 7px;
+  border-bottom: 1px solid var(--dt-line);
+}
+.dt-care-dropdown a:hover {
+  color: var(--dt-accent);
+}
+.dt-grid-button {
+  height: 55px;
+  width: 45px;
+  background: radial-gradient(var(--dt-ink) 1px, transparent 1px) 0 0/7px 7px;
+  flex-shrink: 0;
+  color: var(--dt-ink);
+  border-radius: 12px;
+}
+.dt-grid-button svg {
+  opacity: 0;
+}
+.dt-header-inner > .dt-button {
+  white-space: nowrap;
+  padding: 15px 25px;
+}
+.dt-mobile-toggle {
+  display: none;
+  background: white;
+  border-radius: 50%;
+  padding: 12px;
+}
+.dt-panel-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #0007;
+}
+.dt-side-panel {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: white;
+  width: min(430px, 100%);
+  padding: 65px 35px;
+  overflow-y: auto;
+}
+.dt-side-panel > button:first-child {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: none;
+}
+.dt-side-panel > .dt-photo {
+  height: 160px;
+  margin: 35px 0;
+  border-radius: 20px;
+}
+.dt-side-panel > a:not(.logo) {
+  display: block;
+  margin-bottom: 20px;
+}
+.dt-side-panel .dt-button {
+  display: inline-flex !important;
+  margin-top: 20px;
+}
+.dt-hero {
+  margin: 0 20px;
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--dt-ink);
+}
+.dt-hero-photo,
+.dt-hero-shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.dt-hero-photo .dt-photo {
+  object-position: top right;
+}
+.dt-hero-shade {
+  background: linear-gradient(90deg, #071726be 5%, #07172655 55%, #07172605);
+}
+.dt-hero-content {
+  padding: 200px 0;
+  max-width: 1440px;
+  width: calc(100% - 200px);
+}
+.dt-hero-content > div {
+  max-width: 850px;
+}
+.dt-hero-tag {
+  display: inline-block;
+  background: var(--dt-accent);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 2px;
+  line-height: 24px;
+  margin-bottom: 25px;
+}
+.dt-site .dt-hero h1 {
+  color: white;
+  font-size: 100px;
+  line-height: 110px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+}
+.dt-hero h1 > span {
+  display: block;
+  font-weight: 400;
+}
+.dt-hero-bottom {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 20px;
+  align-items: center;
+  max-width: 620px;
+}
+.dt-site .dt-hero-bottom p {
+  font-size: 18px;
+  line-height: 28px;
+  color: white;
+  margin: 0;
+  max-width: 360px;
+}
+.dt-circle-link {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 160px;
+  height: 160px;
+  color: white;
+}
+.dt-circle-link > svg:first-child {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  animation: dt-rotate 22s linear infinite;
+  fill: currentColor;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.dt-circle-link > svg:last-child {
+  transition: transform 0.4s;
+}
+.dt-circle-link:hover > svg:last-child {
+  transform: rotate(45deg);
+}
+.dt-hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: white;
+  outline: 9px solid var(--dt-pale);
+  transition:
+    color 0.3s,
+    background 0.3s;
+}
+.dt-hero-arrow.is-prev {
+  left: 8px;
+}
+.dt-hero-arrow.is-next {
+  right: 8px;
+}
+.dt-hero-arrow:hover {
+  background: var(--dt-accent);
+  color: white;
+}
+.dt-hero-pause {
+  position: absolute;
+  right: 30px;
+  bottom: 25px;
+  background: #ffffffdf;
+  border-radius: 50px;
+  padding: 6px 17px;
+  font-size: 11px;
+  box-shadow: 0 3px 20px #0001;
+}
+.dt-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding-top: 110px;
+}
+.dt-feature {
+  position: relative;
+  background: white;
+  padding: 50px;
+  border-radius: 30px;
+  min-height: 310px;
+}
+.dt-notch {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100px;
+  height: 100px;
+  fill: var(--dt-pale);
+  pointer-events: none;
+}
+.dt-feature-number {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: white;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+}
+.dt-feature h3 {
+  font-size: 26px;
+  line-height: 38px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--dt-line);
+  max-width: calc(100% - 70px);
+}
+.dt-feature p {
+  max-width: calc(100% - 75px);
+  margin: 0;
+}
+.dt-feature > svg:last-child {
+  position: absolute;
+  bottom: 50px;
+  right: 40px;
+  transition:
+    transform 0.5s,
+    color 0.4s;
+}
+.dt-feature:hover > svg:last-child {
+  transform: rotateY(180deg);
+  color: var(--dt-accent);
+}
+.dt-about-heading {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.dt-about-heading > div:last-child {
+  max-width: 420px;
+}
+.dt-about-visual {
+  position: relative;
+  min-height: 485px;
+  margin-bottom: 20px;
+}
+.dt-about-picture {
+  width: 70%;
+  height: 485px;
+  border-radius: 30px;
+  object-position: center;
+}
+.dt-about-play {
+  position: absolute;
+  left: 74%;
+  top: 0;
+  background: white;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 0 12px var(--dt-pale);
+  transition:
+    color 0.3s,
+    transform 0.3s;
+}
+.dt-about-play:hover {
+  color: var(--dt-accent);
+  transform: rotate(45deg);
+}
+.dt-about-stats {
+  position: absolute;
+  right: 0;
+  top: 100px;
+  width: 40%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: white;
+  border-radius: 30px;
+  padding: 30px;
+  box-shadow: 0 12px 35px #00000005;
+}
+.dt-about-stats > div {
+  padding-inline: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.dt-about-stats > div:first-child {
+  border-right: 1px solid var(--dt-line);
+}
+.dt-about-stats strong {
+  font: 600 60px/75px Sora;
+}
+.dt-about-stats span {
+  font-size: 18px;
+  line-height: 28px;
+}
+.dt-marquee {
+  padding: 20px 0;
+  overflow: hidden;
+}
+.dt-marquee > div {
+  display: flex;
+  width: max-content;
+  animation: dt-marquee 40s linear infinite;
+}
+.dt-marquee span {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  white-space: nowrap;
+  font:
+    700 100px/1.2 "Plus Jakarta Sans",
+    sans-serif;
+  margin-right: 40px;
+}
+.dt-marquee b {
+  font-weight: 700;
+  color: var(--dt-accent);
+}
+.dt-marquee svg {
+  flex-shrink: 0;
+}
+.dt-marquee:hover > div {
+  animation-play-state: paused;
+}
+.dt-section-title {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 55px;
+}
+.dt-section-title .dt-heading {
+  margin-bottom: 0;
+}
+.dt-service-rail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 60px) / 3);
+  gap: 30px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-bottom: 5px;
+}
+.dt-service-rail::-webkit-scrollbar {
+  display: none;
+}
+.dt-service-rail > div {
+  scroll-snap-align: start;
+}
+.dt-service-card {
+  display: block;
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.dt-service-image {
+  position: relative;
+}
+.dt-service-image > .photo {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  transition:
+    transform 0.6s,
+    filter 0.6s;
+}
+.dt-notch-left {
+  left: 0;
+  right: auto;
+  transform: scaleX(-1);
+}
+.dt-service-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: white;
+  transition:
+    color 0.4s,
+    background 0.4s;
+}
+.dt-service-card:hover .dt-service-icon {
+  background: var(--dt-accent);
+  color: white;
+}
+.dt-service-card:hover .photo {
+  filter: brightness(0.9);
+}
+.dt-service-copy {
+  position: relative;
+  padding: 30px 65px 30px 30px;
+  min-height: 158px;
+}
+.dt-service-copy > span {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--dt-muted);
+}
+.dt-service-copy h3 {
+  font-size: 26px;
+  line-height: 35px;
+  margin: 12px 0 0;
+}
+.dt-service-copy > svg {
+  position: absolute;
+  right: 25px;
+  bottom: 35px;
+  color: var(--dt-accent);
+  transition: transform 0.3s;
+}
+.dt-service-card:hover .dt-service-copy > svg {
+  transform: translate(3px, -3px);
+}
+.dt-carousel-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-top: 45px;
+}
+.dt-carousel-controls > button {
+  background: white;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+}
+.dt-carousel-controls > button:hover {
+  background: var(--dt-accent);
+  color: white;
+}
+.dt-carousel-dots {
+  display: flex;
+  gap: 9px;
+}
+.dt-carousel-dots > span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--dt-ink);
+}
+.dt-carousel-dots > .active {
+  background: var(--dt-accent);
+  transform: scale(1.6);
+}
+.dt-rings {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 45px;
+  padding-bottom: 120px;
+}
+.dt-rings > div {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.dt-ring {
+  position: relative;
+  width: 120px;
+  min-width: 120px;
+  height: 120px;
+  display: grid;
+  place-items: center;
+}
+.dt-ring svg {
+  position: absolute;
+  inset: 0;
+  fill: none;
+  transform: rotate(-90deg);
+}
+.dt-ring circle {
+  stroke: white;
+  stroke-width: 6;
+}
+.dt-ring circle:last-child {
+  stroke: var(--dt-accent);
+}
+.dt-ring strong {
+  font: 600 42px/1 Sora;
+}
+.dt-rings h3 {
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 10px;
+}
+.dt-rings p {
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0;
+}
+.dt-enquiry {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  background: var(--dt-accent);
+  border-radius: 30px;
+  overflow: hidden;
+  margin: 0 20px;
+}
+.dt-enquiry-copy {
+  padding: 90px max(45px, calc((100vw - 1440px) / 2));
+  background: url("/images/doctean/pattern.webp") repeat;
+  background-blend-mode: soft-light;
+  background-size: 240px;
+  background-color: var(--dt-accent);
+  color: white;
+}
+.dt-site .dt-enquiry-copy h3 {
+  color: white;
+  font-size: 32px;
+  line-height: 44px;
+}
+.dt-site .dt-enquiry-copy p {
+  color: white;
+}
+.dt-enquiry-feature {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-top: 40px;
+}
+.dt-enquiry-feature > svg {
+  width: 70px;
+  height: 70px;
+  padding: 18px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--dt-ink);
+}
+.dt-site .dt-enquiry-feature h3 {
+  font-size: 25px;
+  line-height: 34px;
+  margin-bottom: 10px;
+}
+.dt-enquiry-feature p {
+  margin: 0;
+}
+.dt-enquiry-form {
+  position: relative;
+  background: white;
+  border-radius: 0 30px 30px 0;
+  padding: 90px 50px;
+}
+.dt-enquiry-badge {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  background: var(--dt-pale);
+  border-radius: 50%;
+  color: var(--dt-accent);
+}
+.dt-enquiry-form .dt-heading {
+  margin-bottom: 45px;
+  max-width: 550px;
+}
+.dt-enquiry-form .dt-eyebrow {
+  background: var(--dt-pale);
+}
+.dt-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.dt-enquiry-form form > label {
+  display: block;
+}
+.dt-enquiry-form label > span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+.dt-enquiry-form input,
+.dt-enquiry-form select,
+.dt-enquiry-form textarea {
+  width: 100%;
+  border: 0;
+  background: var(--dt-pale);
+  color: var(--dt-ink);
+  padding: 17px 22px;
+  border-radius: 50px;
+  min-width: 0;
+  font: 400 13px/23px Sora;
+}
+.dt-enquiry-form textarea {
+  border-radius: 25px;
+  margin-top: 15px;
+  resize: vertical;
+}
+.dt-enquiry-form input:focus,
+.dt-enquiry-form select:focus,
+.dt-enquiry-form textarea:focus {
+  outline: 2px solid var(--dt-accent);
+  outline-offset: 2px;
+}
+.dt-enquiry-form .dt-consent {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 11px;
+  line-height: 20px;
+  margin: 20px 0;
+}
+.dt-enquiry-form .dt-consent > input {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+}
+.dt-consent a {
+  text-decoration: underline;
+}
+.dt-site .dt-form-note {
+  font-size: 11px;
+  line-height: 19px;
+  margin: 18px 0 0;
+}
+.dt-enquiry-ready {
+  min-height: 380px;
+}
+.dt-enquiry-ready > svg {
+  color: var(--dt-accent);
+  margin-bottom: 25px;
+}
+.dt-text-button {
+  display: block;
+  background: none;
+  text-decoration: underline;
+  padding: 20px 0;
+  font-size: 13px;
+}
+.dt-expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+.dt-expertise-card {
+  position: relative;
+  display: block;
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+  height: 450px;
+}
+.dt-expertise-card .dt-photo {
+  object-position: top center;
+  transition: transform 0.7s;
+}
+.dt-expertise-card:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, white 13%, transparent 65%);
+  transition: opacity 0.5s;
+}
+.dt-expertise-card:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(0deg, var(--dt-accent) 7%, transparent 75%);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.dt-expertise-card:hover:before {
+  opacity: 1;
+}
+.dt-expertise-card:hover:after {
+  opacity: 0;
+}
+.dt-expertise-card:hover .dt-photo {
+  transform: scale(1.035);
+}
+.dt-expertise-card > div {
+  position: absolute;
+  z-index: 2;
+  left: 20px;
+  right: 20px;
+  bottom: 30px;
+  text-align: center;
+}
+.dt-expertise-card h3 {
+  font-size: 23px;
+  line-height: 31px;
+  margin: 0 0 10px;
+  transition: color 0.5s;
+}
+.dt-expertise-card > div > span {
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--dt-accent);
+  transition: color 0.5s;
+}
+.dt-expertise-card:hover h3,
+.dt-expertise-card:hover > div > span {
+  color: white;
+}
+.dt-expertise-more {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: white;
+  z-index: 3;
+  transform: translateY(-60px);
+  transition: transform 0.4s;
+}
+.dt-expertise-card:hover .dt-expertise-more,
+.dt-expertise-card:focus-visible .dt-expertise-more {
+  transform: none;
+}
+.dt-promise {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 90%;
+  margin: 0 0 0 0;
+  align-items: stretch;
+}
+.dt-promise > .photo {
+  height: 100%;
+  min-height: 600px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0 0 0 30px;
+}
+.dt-promise-copy {
+  position: relative;
+  background: white;
+  padding: 100px 70px;
+  border-radius: 0 30px 30px 0;
+}
+.dt-promise-copy .dt-notch {
+  width: 100px;
+  height: 100px;
+}
+.dt-promise-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--dt-accent);
+  color: white;
+  display: grid;
+  place-items: center;
+}
+.dt-promise blockquote {
+  margin: 20px 0 0;
+}
+.dt-site .dt-promise blockquote > p {
+  font-size: 23px;
+  line-height: 35px;
+  color: var(--dt-ink);
+  margin-bottom: 30px;
+}
+.dt-promise blockquote footer {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.dt-promise blockquote footer > img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  object-position: 50% 6%;
+  border-radius: 50%;
+  background: var(--dt-pale);
+}
+.dt-promise blockquote footer h3 {
+  font-size: 20px;
+  line-height: 27px;
+  margin: 0 0 7px;
+}
+.dt-promise blockquote footer span {
+  font-size: 11px;
+  line-height: 18px;
+  color: var(--dt-muted);
+}
+.dt-promise-controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 35px;
+}
+.dt-promise-controls button {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--dt-ink);
+  padding: 0;
+}
+.dt-promise-controls button[aria-pressed="true"] {
+  background: var(--dt-accent);
+  transform: scale(1.5);
+}
+.dt-plans > .dt-heading {
+  max-width: 700px;
+}
+.dt-plans-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 55px;
+}
+.dt-plan {
+  height: 100%;
+  border: 1px solid white;
+  background: white;
+  border-radius: 30px;
+  padding: 45px 40px;
+}
+.dt-plan.is-featured {
+  border-color: var(--dt-accent);
+  background:
+    radial-gradient(
+      circle at 90% 5%,
+      rgb(var(--p-soft-rgb) / 0.45),
+      transparent 45%
+    ),
+    white;
+}
+.dt-plan > span {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.dt-site .dt-plan > h3 {
+  font-size: 45px;
+  line-height: 55px;
+  margin: 25px 0 15px;
+  color: var(--dt-accent);
+}
+.dt-plan ul {
+  list-style: none;
+  margin: 30px 0;
+  padding: 25px 0 0;
+  border-top: 1px solid var(--dt-line);
+}
+.dt-plan li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 18px;
+  font-size: 14px;
+  line-height: 22px;
+}
+.dt-plan li svg {
+  flex-shrink: 0;
+  color: var(--dt-accent);
+}
+.dt-site .dt-plan-note {
+  font-size: 12px;
+  line-height: 22px;
+  margin: 25px 0;
+}
+.dt-plan .dt-button {
+  width: 100%;
+  padding-inline: 15px;
+}
+.dt-coverage-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 45px;
+}
+.dt-coverage-filters button,
+.dt-service-filters button {
+  border-radius: 50px;
+  background: white;
+  font-size: 13px;
+  padding: 12px 22px;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+.dt-coverage-filters button[aria-pressed="true"],
+.dt-service-filters button[aria-pressed="true"] {
+  background: var(--dt-accent);
+  color: white;
+}
+.dt-table-scroll {
+  overflow-x: auto;
+}
+.dt-coverage table {
+  width: 100%;
+  min-width: 1000px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  text-align: center;
+  background: white;
+}
+.dt-coverage th,
+.dt-coverage td {
+  padding: 22px 10px;
+  border: 1px solid var(--dt-pale);
+  font-size: 14px;
+  font-weight: 400;
+}
+.dt-coverage thead th {
+  background: var(--dt-accent);
+  color: white;
+  font-size: 16px;
+  padding: 24px 10px;
+}
+.dt-coverage td a {
+  display: block;
+}
+.dt-coverage small {
+  display: block;
+  font-size: 11px;
+  line-height: 18px;
+  margin-top: 7px;
+}
+.dt-coverage td:hover {
+  background: var(--dt-pale);
+}
+.dt-coverage .dt-coverage-tint {
+  background: var(--dt-pale);
+}
+.dt-site .dt-small {
+  font-size: 12px;
+  line-height: 22px;
+  margin-top: 22px;
+}
+.dt-guidance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.dt-guidance-card {
+  display: block;
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.dt-guidance-card > div {
+  position: relative;
+  overflow: hidden;
+}
+.dt-guidance-card .photo {
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+  transition: transform 0.65s;
+}
+.dt-guidance-card:hover .photo {
+  transform: scale(1.06);
+}
+.dt-guidance-arrow {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: white;
+  display: grid;
+  place-items: center;
+  color: var(--dt-accent);
+}
+.dt-guidance-card > section {
+  padding: 30px;
+}
+.dt-guidance-card > section > span:first-child {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--dt-muted);
+}
+.dt-guidance-card h3 {
+  font-size: 24px;
+  line-height: 34px;
+  margin: 15px 0 25px;
+}
+.dt-read-more {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--dt-accent);
+}
+.dt-footer {
+  background: var(--dt-ink);
+  color: white;
+  padding: 85px 0 25px;
+  margin: 0 20px 20px;
+  border-radius: 30px;
+}
+.dt-footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.2fr 1.3fr;
+  gap: 55px;
+}
+.dt-footer .logo > span {
+  color: white;
+}
+.dt-site .dt-footer p {
+  color: #ffffffe0;
+  font-size: 14px;
+  line-height: 25px;
+  margin-top: 25px;
+}
+.dt-footer .dt-button {
+  background: var(--dt-accent);
+  font-size: 11px;
+  padding-inline: 20px;
+}
+.dt-site .dt-footer h3 {
+  color: white;
+  font-size: 22px;
+  line-height: 30px;
+  margin: 0 0 25px;
+}
+.dt-footer-grid > div > a:not(.logo, .dt-button) {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 17px;
+}
+.dt-footer-grid a:hover {
+  text-decoration: underline;
+}
+.dt-footer-contact {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 40px;
+  padding: 30px;
+  margin: 50px 0;
+  background: var(--dt-accent);
+  border-radius: 30px;
+}
+.dt-footer-contact > div {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.dt-footer-contact > div > svg {
+  flex-shrink: 0;
+}
+.dt-footer-contact span {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.dt-footer-contact strong,
+.dt-footer-contact a {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-top: 8px;
+}
+.dt-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 11px;
+  line-height: 20px;
+}
+.dt-scroll-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 35;
+  background: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 5px 25px #00000008;
+}
+.dt-scroll-top > svg:first-child {
+  position: absolute;
+  inset: 0;
+  fill: none;
+  stroke: var(--dt-accent);
+  stroke-width: 1.5;
+  transform: rotate(-90deg);
+}
+.dt-inner-hero {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  margin: 0 20px;
+  min-height: 506px;
+  display: flex;
+  align-items: center;
+  isolation: isolate;
+}
+.dt-inner-hero > .dt-photo {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  object-position: center;
+}
+.dt-inner-hero:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #000b 10%, #0001 90%);
+  z-index: -1;
+}
+.dt-site .dt-inner-hero h1 {
+  color: white;
+  font-size: 50px;
+  line-height: 60px;
+  margin: 0 0 25px;
+  max-width: 900px;
+}
+.dt-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  font-size: 14px;
+}
+.dt-breadcrumb span:last-child {
+  max-width: 400px;
+}
+.dt-split-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.dt-split-story > .photo,
+.dt-split-story > .dt-photo {
+  height: 600px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+}
+.dt-faq {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 100px;
+  align-items: start;
+}
+.dt-faq details {
+  border-bottom: 1px solid var(--dt-line);
+  padding: 22px 0;
+}
+.dt-faq summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 26px;
+}
+.dt-faq summary::-webkit-details-marker {
+  display: none;
+}
+.dt-faq summary svg {
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+.dt-faq details[open] summary svg {
+  transform: rotate(45deg);
+}
+.dt-faq details > p {
+  margin: 20px 0 0;
+}
+.dt-service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.dt-service-filters {
+  display: grid;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+.dt-service-filters > label {
+  max-width: 400px;
+  display: grid;
+  font-size: 13px;
+  gap: 10px;
+}
+.dt-service-filters input {
+  background: white;
+  border: 1px solid var(--dt-line);
+  border-radius: 50px;
+  padding: 15px 20px;
+  color: var(--dt-ink);
+}
+.dt-service-filters > div {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.dt-service-detail {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 70px;
+}
+.dt-service-menu {
+  background: white;
+  padding: 30px;
+  border-radius: 30px;
+}
+.dt-service-menu h3 {
+  font-size: 24px;
+  line-height: 32px;
+}
+.dt-service-menu a {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--dt-line);
+  font-size: 13px;
+  line-height: 22px;
+}
+.dt-service-menu a svg {
+  flex-shrink: 0;
+}
+.dt-service-menu a.active {
+  color: var(--dt-accent);
+  font-weight: 500;
+}
+.dt-sidebar-card {
+  border-radius: 30px;
+  padding: 30px;
+  background: var(--dt-accent);
+  margin-top: 35px;
+  color: white;
+}
+.dt-sidebar-card > .photo {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 25px;
+}
+.dt-site .dt-sidebar-card h3,
+.dt-site .dt-sidebar-card p {
+  color: white;
+}
+.dt-sidebar-card .dt-button {
+  background: var(--dt-ink);
+  padding-inline: 20px;
+}
+.dt-service-detail article > h2 {
+  font-size: 40px;
+  line-height: 52px;
+}
+.dt-site .dt-service-main-image {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 30px;
+  margin-bottom: 40px;
+}
+.dt-check-list {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0;
+}
+.dt-check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  margin-bottom: 20px;
+}
+.dt-check-list li svg {
+  flex-shrink: 0;
+  color: var(--dt-accent);
+  margin-top: 3px;
+}
+.dt-service-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin: 40px 0;
+}
+.dt-service-pair .photo {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 25px;
+}
+.dt-concierge-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding-bottom: 120px;
+}
+.dt-concierge-photo {
+  display: block;
+  position: relative;
+  height: 430px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.dt-concierge-photo .photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s;
+}
+.dt-concierge-photo:after {
+  content: "";
+  position: absolute;
+  inset: 20% 0 0;
+  background: linear-gradient(transparent, #071726e8);
+}
+.dt-site .dt-concierge-photo h3 {
+  position: absolute;
+  left: 35px;
+  bottom: 30px;
+  color: white;
+  z-index: 1;
+  margin: 0;
+  max-width: 75%;
+}
+.dt-concierge-photo > svg {
+  position: absolute;
+  right: 30px;
+  bottom: 35px;
+  z-index: 1;
+  color: white;
+}
+.dt-concierge-photo:hover .photo {
+  transform: scale(1.055);
+}
+.dt-city-links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--dt-line);
+  font-size: 21px;
+}
+.dt-city-links a:hover {
+  color: var(--dt-accent);
+}
+.dt-process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+.dt-process-grid article {
+  position: relative;
+}
+.dt-process-grid .photo {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 30px;
+  margin-bottom: 30px;
+}
+.dt-process-grid article > span {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+.dt-legal {
+  max-width: 900px;
+}
+.dt-legal h3 {
+  margin-top: 40px;
+}
+.dt-legal a {
+  text-decoration: underline;
+}
+.dt-contact-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 100px 0;
+}
+.dt-contact-details > div {
+  background: white;
+  border-radius: 30px;
+  padding: 40px;
+  text-align: center;
+}
+.dt-contact-details svg {
+  color: var(--dt-accent);
+  margin-bottom: 20px;
+}
+.dt-contact-details h3 {
+  font-size: 24px;
+  line-height: 32px;
+}
+.dt-contact-details p {
+  margin: 0;
+}
+.dt-enquiry-standalone {
+  margin-bottom: 120px;
+}
+@keyframes dt-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes dt-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (min-width: 1600px) {
+  .dt-hero-content {
+    width: calc(100% - 240px);
+  }
+  .dt-header-inner {
+    gap: 35px;
+  }
+  .dt-topbar {
+    max-width: 1680px;
+  }
+  .dt-navigation {
+    gap: 35px;
+  }
+  .dt-hero-content > div {
+    max-width: 950px;
+  }
+}
+@media (max-width: 1366px) {
+  .dt-site .dt-hero h1 {
+    font-size: 50px;
+    line-height: 110px;
+    letter-spacing: 0;
+  }
+  .dt-header-inner {
+    gap: 18px;
+  }
+  .dt-navigation {
+    gap: 20px;
+    padding-inline: 20px;
+  }
+  .dt-header-inner > .dt-button {
+    font-size: 11px;
+    padding-inline: 20px;
+  }
+  .dt-grid-button {
+    width: 30px;
+  }
+  .dt-feature {
+    padding: 45px 35px;
+  }
+  .dt-feature > svg:last-child {
+    right: 30px;
+    bottom: 45px;
+  }
+  .dt-feature h3 {
+    font-size: 24px;
+    line-height: 34px;
+  }
+  .dt-feature p {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .dt-about-heading {
+    gap: 40px;
+  }
+  .dt-rings {
+    gap: 25px;
+  }
+  .dt-rings > div {
+    gap: 18px;
+  }
+  .dt-ring {
+    width: 100px;
+    min-width: 100px;
+    height: 100px;
+  }
+  .dt-rings h3 {
+    font-size: 22px;
+  }
+  .dt-enquiry-copy {
+    padding: 80px 40px;
+  }
+  .dt-enquiry-form {
+    padding: 80px 40px;
+  }
+  .dt-footer-grid {
+    gap: 30px;
+  }
+  .dt-promise-copy {
+    padding: 80px 50px;
+  }
+  .dt-service-detail {
+    gap: 40px;
+    grid-template-columns: 300px 1fr;
+  }
+}
+@media (max-width: 1100px) {
+  .dt-topbar > span:first-child {
+    display: none;
+  }
+  .dt-header-inner > .dt-button {
+    display: none;
+  }
+  .dt-navigation {
+    gap: 25px;
+  }
+  .dt-site h2 {
+    font-size: 43px;
+    line-height: 54px;
+  }
+  .dt-feature {
+    padding: 40px 25px;
+  }
+  .dt-feature h3 {
+    font-size: 22px;
+    max-width: calc(100% - 50px);
+  }
+  .dt-feature p {
+    max-width: calc(100% - 55px);
+  }
+  .dt-feature > svg:last-child {
+    width: 53px;
+    right: 18px;
+    bottom: 35px;
+  }
+  .dt-rings {
+    grid-template-columns: 1fr;
+  }
+  .dt-rings > div {
+    max-width: 550px;
+    margin: auto;
+    gap: 30px;
+  }
+  .dt-expertise-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .dt-promise {
+    width: 100%;
+  }
+  .dt-promise-copy {
+    padding: 65px 35px;
+  }
+  .dt-plans-grid {
+    gap: 20px;
+  }
+  .dt-plan {
+    padding: 35px 25px;
+  }
+  .dt-site .dt-plan > h3 {
+    font-size: 35px;
+    line-height: 45px;
+  }
+  .dt-plan li {
+    font-size: 12px;
+  }
+  .dt-footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+  }
+  .dt-footer-contact {
+    gap: 25px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .dt-footer-contact > div:first-child {
+    grid-column: 1/-1;
+  }
+  .dt-service-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .dt-service-image > .photo {
+    height: 300px;
+  }
+  .dt-split-story {
+    gap: 45px;
+  }
+  .dt-faq {
+    gap: 45px;
+  }
+  .dt-service-detail {
+    grid-template-columns: 240px 1fr;
+    gap: 30px;
+  }
+  .dt-service-menu {
+    padding: 25px;
+  }
+  .dt-sidebar-card {
+    padding: 25px;
+  }
+}
+@media (max-width: 800px) {
+  .dt-header-inner {
+    justify-content: space-between;
+    min-height: 88px;
+  }
+  .dt-topbar {
+    min-height: 42px;
+    gap: 20px;
+    font-size: 10px;
+  }
+  .dt-topbar > a:nth-child(3) {
+    display: none;
+  }
+  .dt-header {
+    padding: 0 15px;
+  }
+  .dt-site .logo > span {
+    font-size: 21px;
+  }
+  .dt-navigation {
+    display: none;
+    position: absolute;
+    top: 88px;
+    left: 15px;
+    right: 15px;
+    border-radius: 20px;
+    min-height: 0;
+    padding: 25px;
+    max-height: 70vh;
+    overflow: auto;
+    box-shadow: 0 15px 35px #0001;
+  }
+  .dt-navigation.is-open {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 22px;
+    z-index: 60;
+  }
+  .dt-navigation > a,
+  .dt-navigation > div > button {
+    font-size: 14px;
+  }
+  .dt-care-dropdown {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    padding: 10px 0 0;
+    max-height: 300px;
+  }
+  .dt-grid-button {
+    margin-left: auto;
+    width: 30px;
+    margin-right: 8px;
+  }
+  .dt-mobile-toggle {
+    display: grid;
+  }
+  .dt-hero {
+    margin: 0 15px;
+  }
+  .dt-hero-content {
+    padding: 150px 25px;
+    width: 100%;
+  }
+  .dt-hero-content > div {
+    max-width: 650px;
+  }
+  .dt-site .dt-hero h1 {
+    font-size: 60px;
+    line-height: 75px;
+  }
+  .dt-hero-bottom {
+    max-width: 600px;
+  }
+  .dt-hero-bottom p {
+    max-width: none;
+  }
+  .dt-hero-arrow {
+    display: none;
+  }
+  .dt-features {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding-top: 60px;
+  }
+  .dt-feature {
+    padding: 45px;
+    min-height: 250px;
+  }
+  .dt-feature h3 {
+    max-width: 70%;
+    font-size: 26px;
+  }
+  .dt-feature p {
+    max-width: 70%;
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .dt-feature > svg:last-child {
+    right: 45px;
+    bottom: 45px;
+    width: 67px;
+  }
+  .dt-section {
+    padding: 80px 0;
+  }
+  .dt-about-heading {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .dt-about-heading > div:last-child {
+    max-width: 650px;
+  }
+  .dt-about-picture {
+    width: 85%;
+    height: 380px;
+  }
+  .dt-about-visual {
+    min-height: 530px;
+  }
+  .dt-about-stats {
+    width: 65%;
+    top: auto;
+    bottom: 0;
+  }
+  .dt-about-play {
+    left: auto;
+    right: 4%;
+    top: 15px;
+  }
+  .dt-marquee span {
+    font-size: 70px;
+    gap: 25px;
+  }
+  .dt-marquee svg {
+    width: 40px;
+  }
+  .dt-service-rail {
+    grid-auto-columns: calc((100% - 25px) / 2);
+    gap: 25px;
+  }
+  .dt-service-copy {
+    padding: 25px 55px 25px 25px;
+  }
+  .dt-service-copy h3 {
+    font-size: 23px;
+    line-height: 32px;
+  }
+  .dt-rings {
+    padding-bottom: 80px;
+  }
+  .dt-enquiry {
+    grid-template-columns: 1fr;
+    margin-inline: 15px;
+  }
+  .dt-enquiry-copy {
+    padding: 60px 40px;
+  }
+  .dt-enquiry-form {
+    border-radius: 30px;
+    padding: 60px 40px;
+  }
+  .dt-enquiry-form .dt-heading {
+    max-width: 600px;
+  }
+  .dt-promise {
+    grid-template-columns: 1fr;
+  }
+  .dt-promise > .photo {
+    height: 420px;
+    min-height: 0;
+  }
+  .dt-promise-copy {
+    border-radius: 0 30px 30px;
+    padding: 65px 40px;
+    margin-right: 15px;
+  }
+  .dt-plans-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .dt-plan {
+    padding: 40px;
+  }
+  .dt-site .dt-plan > h3 {
+    font-size: 45px;
+  }
+  .dt-plan li {
+    font-size: 15px;
+  }
+  .dt-guidance-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .dt-guidance-card .photo {
+    height: 350px;
+  }
+  .dt-guidance-card h3 {
+    font-size: 26px;
+  }
+  .dt-footer {
+    margin: 0 15px 15px;
+    padding-top: 65px;
+  }
+  .dt-inner-hero {
+    margin: 0 15px;
+    min-height: 420px;
+  }
+  .dt-site .dt-inner-hero h1 {
+    font-size: 42px;
+    line-height: 53px;
+  }
+  .dt-split-story {
+    grid-template-columns: 1fr;
+  }
+  .dt-split-story > .photo,
+  .dt-split-story > .dt-photo {
+    height: 460px;
+  }
+  .dt-faq {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .dt-service-detail {
+    grid-template-columns: 1fr;
+  }
+  .dt-service-detail > aside {
+    order: 2;
+  }
+  .dt-service-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 25px;
+  }
+  .dt-service-menu h3 {
+    grid-column: 1/-1;
+  }
+  .dt-sidebar-card {
+    display: none;
+  }
+  .dt-process-grid {
+    grid-template-columns: 1fr;
+  }
+  .dt-process-grid .photo {
+    height: 380px;
+  }
+  .dt-contact-details {
+    grid-template-columns: 1fr;
+    padding: 70px 0;
+  }
+  .dt-concierge-photo {
+    height: 350px;
+  }
+}
+@media (max-width: 540px) {
+  .dt-container {
+    width: calc(100% - 40px);
+  }
+  .dt-topbar {
+    justify-content: space-between;
+    font-size: 9px;
+    gap: 10px;
+    min-height: 38px;
+  }
+  .dt-topbar svg {
+    width: 14px;
+  }
+  .dt-topbar .dt-top-phone {
+    margin: 0;
+  }
+  .dt-site .logo > span {
+    font-size: 18px;
+    letter-spacing: 1.5px;
+  }
+  .dt-site .logo > img {
+    width: 43px;
+    height: 43px;
+  }
+  .dt-site .logo small {
+    font-size: 4.4px;
+    letter-spacing: 0.3px;
+  }
+  .dt-site h2 {
+    font-size: 34px;
+    line-height: 44px;
+  }
+  .dt-site h3 {
+    font-size: 24px;
+    line-height: 34px;
+  }
+  .dt-site p {
+    font-size: 15px;
+    line-height: 26px;
+  }
+  .dt-hero-content {
+    padding: 100px 20px 80px;
+  }
+  .dt-hero-tag {
+    font-size: 10px;
+    line-height: 21px;
+    padding: 6px 14px;
+    letter-spacing: 1px;
+    max-width: 100%;
+  }
+  .dt-site .dt-hero h1 {
+    font-size: 43px;
+    line-height: 58px;
+    letter-spacing: -0.6px;
+    margin-bottom: 25px;
+  }
+  .dt-hero-bottom {
+    grid-template-columns: 100px 1fr;
+    gap: 12px;
+  }
+  .dt-circle-link {
+    width: 100px;
+    height: 100px;
+  }
+  .dt-circle-link > svg:last-child {
+    width: 27px;
+  }
+  .dt-site .dt-hero-bottom p {
+    font-size: 13px;
+    line-height: 23px;
+  }
+  .dt-hero-photo .dt-photo {
+    object-position: 65% center;
+  }
+  .dt-hero-shade {
+    background: #09172685;
+  }
+  .dt-features {
+    padding-top: 55px;
+  }
+  .dt-feature {
+    padding: 35px 30px;
+  }
+  .dt-feature h3 {
+    font-size: 24px;
+    line-height: 33px;
+    max-width: 70%;
+  }
+  .dt-feature p {
+    max-width: 65%;
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .dt-feature > svg:last-child {
+    right: 25px;
+    bottom: 35px;
+    width: 58px;
+  }
+  .dt-section {
+    padding: 65px 0;
+  }
+  .dt-about-picture {
+    height: 280px;
+    width: 90%;
+  }
+  .dt-about-stats {
+    width: 90%;
+    padding: 20px;
+    bottom: 5px;
+  }
+  .dt-about-stats strong {
+    font-size: 45px;
+    line-height: 60px;
+  }
+  .dt-about-stats span {
+    font-size: 13px;
+    line-height: 22px;
+  }
+  .dt-about-stats > div {
+    padding-inline: 12px;
+  }
+  .dt-about-visual {
+    min-height: 420px;
+  }
+  .dt-about-play {
+    right: 0;
+    width: 50px;
+    height: 50px;
+    top: 5px;
+  }
+  .dt-marquee span {
+    font-size: 48px;
+    gap: 20px;
+  }
+  .dt-marquee svg {
+    width: 30px;
+  }
+  .dt-section-title {
+    margin-bottom: 35px;
+  }
+  .dt-service-rail {
+    grid-auto-columns: 87%;
+    gap: 20px;
+  }
+  .dt-service-image > .photo {
+    height: 300px;
+  }
+  .dt-service-grid {
+    grid-template-columns: 1fr;
+  }
+  .dt-service-copy {
+    min-height: 140px;
+  }
+  .dt-rings {
+    padding-bottom: 65px;
+  }
+  .dt-rings > div {
+    gap: 20px;
+  }
+  .dt-ring {
+    width: 90px;
+    min-width: 90px;
+    height: 90px;
+  }
+  .dt-ring strong {
+    font-size: 35px;
+  }
+  .dt-rings h3 {
+    font-size: 23px;
+    line-height: 30px;
+  }
+  .dt-rings p {
+    font-size: 13px;
+    line-height: 22px;
+  }
+  .dt-enquiry-copy {
+    padding: 45px 25px;
+  }
+  .dt-site .dt-enquiry-copy h3 {
+    font-size: 27px;
+    line-height: 38px;
+  }
+  .dt-enquiry-feature {
+    gap: 15px;
+  }
+  .dt-enquiry-feature > svg {
+    width: 50px;
+    height: 50px;
+    padding: 12px;
+  }
+  .dt-site .dt-enquiry-feature h3 {
+    font-size: 21px;
+    line-height: 30px;
+  }
+  .dt-enquiry-form {
+    padding: 60px 25px 45px;
+  }
+  .dt-enquiry-badge {
+    top: 18px;
+    right: 18px;
+    width: 45px;
+    height: 45px;
+  }
+  .dt-enquiry-badge svg {
+    width: 30px;
+  }
+  .dt-enquiry-form .dt-heading {
+    margin-bottom: 30px;
+  }
+  .dt-form-grid {
+    grid-template-columns: 1fr;
+  }
+  .dt-enquiry-form .dt-button {
+    font-size: 11px;
+    padding-inline: 22px;
+  }
+  .dt-expertise-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .dt-expertise-card {
+    height: 500px;
+  }
+  .dt-promise > .photo {
+    height: 320px;
+  }
+  .dt-promise-copy {
+    padding: 70px 25px 45px;
+  }
+  .dt-site .dt-promise blockquote > p {
+    font-size: 21px;
+    line-height: 33px;
+  }
+  .dt-promise blockquote footer {
+    gap: 12px;
+  }
+  .dt-promise blockquote footer h3 {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .dt-promise blockquote footer > img {
+    width: 50px;
+    height: 50px;
+  }
+  .dt-plan {
+    padding: 35px 28px;
+  }
+  .dt-site .dt-plan > h3 {
+    font-size: 39px;
+    line-height: 49px;
+  }
+  .dt-coverage-filters {
+    gap: 8px;
+  }
+  .dt-coverage-filters button {
+    font-size: 11px;
+    padding: 10px 14px;
+  }
+  .dt-guidance-card .photo {
+    height: 260px;
+  }
+  .dt-guidance-card > section {
+    padding: 25px;
+  }
+  .dt-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .dt-footer-contact {
+    grid-template-columns: 1fr;
+    padding: 25px;
+    margin: 35px 0;
+    gap: 25px;
+  }
+  .dt-footer-contact > div:first-child {
+    grid-column: auto;
+  }
+  .dt-footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .dt-footer {
+    padding-bottom: 25px;
+  }
+  .dt-scroll-top {
+    width: 48px;
+    height: 48px;
+    right: 20px;
+    bottom: 20px;
+  }
+  .dt-inner-hero {
+    min-height: 350px;
+  }
+  .dt-site .dt-inner-hero h1 {
+    font-size: 34px;
+    line-height: 44px;
+  }
+  .dt-breadcrumb {
+    font-size: 12px;
+    gap: 9px;
+  }
+  .dt-breadcrumb > span:last-child {
+    max-width: 220px;
+  }
+  .dt-split-story > .photo,
+  .dt-split-story > .dt-photo {
+    height: 390px;
+  }
+  .dt-service-menu {
+    grid-template-columns: 1fr;
+  }
+  .dt-site .dt-service-main-image {
+    height: 300px;
+  }
+  .dt-service-detail article > h2 {
+    font-size: 31px;
+    line-height: 42px;
+  }
+  .dt-service-pair {
+    gap: 15px;
+  }
+  .dt-service-pair .photo {
+    height: 190px;
+  }
+  .dt-concierge-photos {
+    grid-template-columns: 1fr;
+    padding-bottom: 65px;
+  }
+  .dt-process-grid .photo {
+    height: 290px;
+  }
+  .dt-contact-details > div {
+    padding: 35px 25px;
+  }
+  .dt-enquiry-standalone {
+    margin-bottom: 65px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dt-site *,
+  .dt-site *:before,
+  .dt-site *:after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+.dt-carousel-controls > .dt-carousel-pause {
+  width: auto;
+  padding: 0 16px;
+  font-size: 11px;
+  border-radius: 40px;
+  height: 36px;
+}
+
+.dt-about-picture{overflow:hidden}.dt-about-picture .dt-photo{width:100%;height:100%;object-fit:cover;}
+
+/* Doctean treatment section: continuous patterned canvas and inset form. */
+@font-face{font-family:DocteanMedical;src:url('/fonts/doctean-medical.woff2') format('woff2');font-display:block}
+.dt-medical-icon{font-family:DocteanMedical!important;font-style:normal;line-height:1;display:grid;place-items:center}
+.dt-icon-insurance:before{content:"\f14f"}.dt-icon-healthcare:before{content:"\f153"}.dt-icon-team:before{content:"\f135"}.dt-icon-appointment:before{content:"\f137"}
+.dt-treatment,.dt-enquiry{background-color:var(--dt-accent);background-image:url('/images/doctean/pattern.webp');background-size:288px;background-blend-mode:soft-light}
+.dt-treatment{padding:80px 0 120px;margin-top:0}
+.dt-treatment .dt-rings{padding-bottom:110px;gap:40px}
+.dt-treatment .dt-rings h3,.dt-treatment .dt-rings p{color:white}
+.dt-ring:before{content:"";position:absolute;inset:17px;background:white;border-radius:50%}
+.dt-treatment .dt-ring circle{stroke:var(--dt-ink);stroke-width:1.5}
+.dt-treatment .dt-ring circle:last-child{stroke:white;stroke-width:4}
+.dt-treatment .dt-ring strong{position:relative;color:var(--dt-ink);font:400 28px/1 Sora,sans-serif}
+.dt-enquiry{position:relative;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:90px;align-items:center;max-width:1440px;margin:0 auto;padding:100px 35px;border-radius:0;overflow:visible}
+.dt-treatment .dt-enquiry{background:none;padding-top:0;padding-bottom:0}
+.dt-enquiry-copy{padding:0;background:none;color:white}
+.dt-enquiry-copy>h3{font-size:30px;line-height:40px;margin-bottom:16px}
+.dt-enquiry-copy>p{max-width:560px;margin-bottom:0}
+.dt-enquiry-feature{margin-top:40px;gap:20px}
+.dt-enquiry-feature>.dt-medical-icon{width:64px;height:64px;flex-shrink:0;border-radius:50%;background:var(--dt-ink);color:white;font-size:32px}
+.dt-enquiry-feature h3{font-size:25px;line-height:34px;margin-bottom:8px}
+.dt-enquiry-form{isolation:isolate;background:transparent;border-radius:30px;padding:65px 45px 45px}
+.dt-enquiry-form:before{content:"";position:absolute;inset:0;z-index:-1;background:white;border-radius:30px;mask-image:linear-gradient(white,white),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 111 111'%3E%3Cpath d='M0 0C19.33 0 35 15.67 35 35V41C35 60.33 50.67 76 70 76H76C95.33 76 111 91.67 111 111V0Z'/%3E%3C/svg%3E");mask-size:100% 100%,111px 111px;mask-position:0 0,top right;mask-repeat:no-repeat;mask-composite:exclude}
+.dt-enquiry-badge{top:0;right:0;width:64px;height:64px;background:var(--dt-ink);color:white;font-size:32px}
+.dt-enquiry-form .dt-eyebrow{background:none;padding:0;margin:0 0 18px;border:0;font-size:12px}
+.dt-enquiry-form .dt-heading{font-size:46px;line-height:1.2;margin-bottom:45px;letter-spacing:-1.2px;max-width:none}
+.dt-form-grid{gap:15px 20px}
+.dt-contact-row{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.dt-enquiry-form input:not([type=checkbox]),.dt-enquiry-form select,.dt-enquiry-form textarea{padding:15px 20px;font-size:13px;min-width:0}
+.dt-enquiry-form textarea{margin-top:15px}
+.dt-enquiry-standalone{margin:0 auto}
+@media(min-width:1500px){.dt-enquiry{gap:120px}}
+@media(max-width:1100px){.dt-treatment .dt-rings{grid-template-columns:repeat(3,1fr);gap:25px}.dt-rings>div{gap:15px}.dt-ring{width:100px;min-width:100px;height:100px}.dt-rings h3{font-size:20px}.dt-enquiry{gap:45px;padding:75px 30px}.dt-enquiry-form{padding:60px 30px 35px}.dt-enquiry-form .dt-heading{font-size:36px}.dt-contact-row{gap:10px}}
+@media(max-width:800px){.dt-treatment{padding:60px 0 75px}.dt-treatment .dt-rings{grid-template-columns:1fr;padding-bottom:65px;gap:30px}.dt-enquiry{grid-template-columns:1fr;gap:55px;margin:0;padding:60px 25px}.dt-enquiry-copy{padding:0}.dt-enquiry-form{padding:65px 30px 35px;border-radius:30px}.dt-enquiry-form .dt-heading{font-size:38px}.dt-enquiry-feature{margin-top:30px}}
+@media(max-width:540px){.dt-enquiry{padding:55px 20px}.dt-treatment .dt-enquiry{padding:0 20px}.dt-enquiry-form{padding:65px 22px 30px}.dt-enquiry-form .dt-heading{font-size:32px;margin-bottom:28px}.dt-form-grid{grid-template-columns:1fr}.dt-contact-row{grid-template-columns:1fr;gap:15px}.dt-enquiry-copy>h3{font-size:27px}.dt-enquiry-feature h3{font-size:22px}}
+
+@media(min-width:1101px){.dt-treatment{padding-top:35px}.dt-treatment .dt-enquiry{align-items:start}.dt-treatment .dt-enquiry-copy{padding-top:85px}.dt-treatment .dt-enquiry-copy>h3{max-width:540px}.dt-treatment .dt-enquiry-feature p{max-width:460px}}
+@media(min-width:1500px){.dt-treatment .dt-enquiry{gap:80px;padding-right:135px;grid-template-columns:minmax(0,550fr) minmax(0,640fr)}}
+
+.dt-service-rail{cursor:grab;touch-action:pan-x pan-y;user-select:none}
+.dt-service-rail.is-dragging{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto}
+.dt-service-rail .photo img,.dt-service-rail img{-webkit-user-drag:none;user-select:none}
+.dt-service-rail:focus-visible{outline:2px solid var(--dt-accent);outline-offset:6px}
+
+.dt-promise-fixed-image{min-height:600px;background-image:url('/images/personal-care.webp');background-size:cover;background-position:center;background-attachment:fixed;border-radius:0 0 0 30px}
+.dt-promise-copy{cursor:grab;touch-action:pan-y;user-select:none}
+.dt-promise-copy:active{cursor:grabbing}
+.dt-promise-copy:focus-visible{outline:2px solid var(--dt-accent);outline-offset:-4px}
+.dt-promise-rating{margin-bottom:24px;display:flex;align-items:center;gap:14px}
+.dt-promise-rating>span{display:flex;gap:3px;color:#ffad00}
+.dt-promise-rating small{font-size:10px;color:var(--dt-muted)}
+.dt-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.dt-promise blockquote{min-height:250px}
+.dt-promise blockquote footer>img{width:80px;height:80px;border:8px solid white;outline:1px dashed var(--dt-line)}
+@media(max-width:800px){.dt-promise-fixed-image{min-height:400px;background-attachment:scroll;background-position:center 35%}}
+@media(prefers-reduced-motion:reduce){.dt-promise-fixed-image{background-attachment:scroll}}
+
+/* Reference corner uses a native 111px cutout around a 64px circle. */
+.dt-promise-copy .dt-notch{width:111px;height:111px}
+.dt-promise-icon{width:64px;height:64px;top:0;right:0;z-index:2}
+
+.dt-icon-quotation:before{content:"\f168"}
+.dt-promise-icon .dt-icon-quotation{font-size:30px}
+
+.dt-service-detail{align-items:start;grid-template-columns:350px minmax(0,1fr)}
+.dt-service-detail>article{min-width:0}
+.dt-site .dt-service-main-image{display:block;max-height:450px;object-position:center}
+@media(max-width:1366px){.dt-service-detail{grid-template-columns:300px minmax(0,1fr)}}
+@media(max-width:1100px){.dt-service-detail{grid-template-columns:260px minmax(0,1fr)}}
+@media(max-width:800px){.dt-service-detail{grid-template-columns:1fr}}
+
+.dt-inner-hero>.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:none}
+
+/* Service cards follow the demo's two inverse corners and floating arrow. */
+.dt-service-card{position:relative;isolation:isolate;overflow:hidden;border-radius:30px}
+.dt-service-image{border-radius:30px;overflow:hidden}
+.dt-site .dt-service-image>.photo{display:block;width:100%;height:375px;border-radius:30px;object-fit:cover}
+.dt-service-image .dt-notch-left{width:111px;height:111px;transform:rotate(-90deg);z-index:1}
+.dt-service-icon{z-index:2;color:var(--dt-ink)}
+.dt-service-copy{min-height:130px;padding:30px 75px 30px 30px}
+.dt-service-copy>span{display:inline-block;background:var(--dt-pale);border-radius:30px;padding:3px 14px;color:var(--dt-ink);font-size:11px;line-height:16px;font-weight:500}
+.dt-service-copy h3{font-size:24px;line-height:32px;margin:12px 0 0}
+.dt-service-card .dt-service-bottom-notch{top:auto;bottom:0;right:0;width:111px;height:111px;transform:scaleY(-1);z-index:1}
+.dt-service-arrow{position:absolute;bottom:0;right:0;display:grid;place-items:center;background:white;color:var(--dt-ink);width:64px;height:64px;border-radius:50%;z-index:2;transition:background .3s,color .3s}
+.dt-service-card:hover .dt-service-arrow{background:var(--dt-accent);color:white}
+.dt-service-arrow svg{transition:transform .3s}
+.dt-service-card:hover .dt-service-arrow svg{transform:translate(2px,-2px)}
+@media(max-width:540px){.dt-site .dt-service-image>.photo{height:310px}.dt-service-copy{padding:25px 75px 25px 25px}.dt-service-copy h3{font-size:22px;line-height:30px}}
+
+.dt-service-card{height:100%}
+
+.dt-departments-panel{margin:40px 40px 0;padding:100px 0;background:var(--dt-accent) url('/images/doctean/pattern.webp') repeat;background-size:288px;background-blend-mode:soft-light;border-radius:30px}
+.dt-departments-panel .dt-heading{color:white;margin:15px 0 45px;font-size:46px;line-height:1.25}
+.dt-departments-panel .dt-eyebrow{background:white;color:var(--dt-ink);font-size:12px;padding:6px 20px;border-radius:30px}
+.dt-departments-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px}
+.dt-departments-grid>div{min-width:0}
+.dt-department-card{display:block;position:relative;height:100%;min-height:235px;padding:45px 30px 42px;border-radius:30px;background:rgb(255 255 255 / .06);color:white;transition:background .3s,transform .3s}
+.dt-department-card{mask-image:none}
+.dt-department-card:before{content:"";position:absolute;bottom:0;right:0;width:76px;height:76px;border-radius:32px 0 0 0;background:var(--dt-accent)}
+.dt-department-card:hover{background:rgb(255 255 255 / .12);transform:translateY(-5px)}
+.dt-department-icon{position:absolute;right:30px;top:28px;color:white}
+.dt-department-tag{display:inline-block;padding:3px 14px;border-radius:30px;background:white;color:var(--dt-ink);font-size:10px;line-height:18px;text-transform:uppercase;max-width:calc(100% - 65px)}
+.dt-site .dt-department-card h3{color:white;font-size:24px;line-height:32px;margin:8px 0 14px;max-width:calc(100% - 20px)}
+.dt-site .dt-department-card p{color:white;font-size:14px;line-height:24px;margin:0;padding-right:25px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.dt-department-arrow{position:absolute;right:0;bottom:0;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:var(--dt-accent);color:white;z-index:1;transition:background .3s,color .3s}
+.dt-department-card:hover .dt-department-arrow{background:white;color:var(--dt-accent)}
+@media(max-width:1100px){.dt-departments-panel{margin:30px 20px 0;padding:70px 0}.dt-departments-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.dt-departments-panel{margin:25px 15px 0;padding:55px 0}.dt-departments-grid{grid-template-columns:1fr;gap:20px}.dt-departments-panel .dt-heading{font-size:32px}.dt-department-card{padding:40px 25px;min-height:240px}}
+
+.dt-department-card:before{display:none}.dt-department-card .dt-department-notch{width:111px;height:111px;top:auto;bottom:0;transform:scaleY(-1);fill:var(--dt-accent)}
+
+/* Shared page rhythm: consistent gutters, panel transitions and section gaps. */
+.dt-site{--dt-space-section:80px;--dt-space-detail:48px}
+.dt-section{padding-block:var(--dt-space-section)}
+.dt-section+.dt-section{padding-top:0}
+.dt-features{padding-top:var(--dt-space-section)}
+.dt-about-block+.dt-features{padding-top:0}
+.dt-features+.dt-marquee{margin-top:var(--dt-space-detail)}
+.dt-marquee{padding-block:0;margin-bottom:var(--dt-space-detail)}
+.dt-marquee+.dt-section{padding-top:16px}
+.dt-about-block+.dt-marquee{margin-top:0}
+.dt-promise{width:calc(100% - 44px);max-width:1440px;margin:0 auto var(--dt-space-section);align-items:stretch;border-radius:30px}
+.dt-promise-copy{padding:70px 55px}
+.dt-promise-fixed-image{min-height:500px;border-radius:30px 0 0 30px}
+.dt-promise blockquote{min-height:220px}
+.dt-site main>.dt-enquiry{width:calc(100% - 44px);max-width:1440px;margin:0 auto var(--dt-space-section);padding:64px 40px;gap:64px;border-radius:30px}
+.dt-site main>.dt-promise+.dt-enquiry{margin-top:0}
+.dt-site main>.dt-enquiry .dt-enquiry-copy{padding-top:0}
+.dt-treatment{padding-bottom:var(--dt-space-section)}
+.dt-treatment+.dt-section{padding-top:var(--dt-space-section)}
+.dt-footer{margin-top:0}
+.dt-concierge-photos{padding-bottom:var(--dt-space-section)}
+.dt-plans{padding-top:0}
+.dt-promise+.dt-faq{padding-top:0}
+.dt-section:has(+.dt-enquiry){padding-bottom:var(--dt-space-section)}
+@media(max-width:1100px){.dt-site{--dt-space-section:64px;--dt-space-detail:40px}.dt-promise-copy{padding:55px 35px}.dt-site main>.dt-enquiry{padding:50px 30px;gap:40px}}
+@media(max-width:800px){.dt-site{--dt-space-section:48px;--dt-space-detail:32px}.dt-promise{grid-template-columns:1fr}.dt-promise-fixed-image{min-height:350px;border-radius:30px 30px 0 0}.dt-promise-copy{padding:60px 30px 40px;border-radius:0 0 30px 30px}.dt-site main>.dt-enquiry{padding:40px 25px;gap:40px}.dt-promise blockquote{min-height:200px}}
+@media(max-width:540px){.dt-site{--dt-space-section:40px;--dt-space-detail:28px}.dt-site main>.dt-enquiry{width:calc(100% - 30px);padding:35px 20px;gap:35px}.dt-promise{width:calc(100% - 30px)}.dt-promise-copy{padding:60px 25px 35px}.dt-promise-fixed-image{min-height:300px}.dt-promise blockquote{min-height:230px}}
+
+.dt-about-demo{max-width:1280px;display:grid;grid-template-columns:minmax(0,1.94fr) minmax(0,1fr);gap:60px;align-items:start}
+.dt-about-demo-main,.dt-about-demo-side{min-width:0}
+.dt-about-demo-heading{display:grid;grid-template-columns:minmax(0,1.95fr) minmax(0,1fr);gap:30px;margin-bottom:35px;align-items:start}
+.dt-about-demo-heading .dt-heading{font-size:46px;line-height:1.22;letter-spacing:-1px;margin-bottom:0}
+.dt-about-demo-heading .dt-eyebrow{font-size:11px;padding:6px 18px;margin-bottom:14px}
+.dt-site .dt-about-demo-heading p{font-size:14px;line-height:24px;margin:20px 0 18px}
+.dt-about-demo-heading .dt-button{font-size:11px;padding:14px 25px}
+.dt-about-demo-wide{height:325px;border-radius:30px;overflow:hidden}
+.dt-about-demo-wide .dt-photo{display:block;width:100%;height:100%;object-fit:cover}
+.dt-about-demo-portrait{position:relative;height:350px;border-radius:30px;overflow:hidden}
+.dt-about-demo-portrait .dt-photo{display:block;object-fit:cover;object-position:center;width:100%;height:100%}
+.dt-about-demo-portrait .dt-about-demo-notch{top:auto;bottom:0;left:0;right:auto;width:111px;height:111px;transform:rotate(180deg)}
+.dt-about-demo-link{position:absolute;bottom:0;left:0;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:white;color:var(--dt-ink);transition:background .3s,color .3s}
+.dt-about-demo-link:hover{background:var(--dt-accent);color:white}
+.dt-about-demo-stats{display:grid;grid-template-columns:1fr 1fr;background:white;border-radius:22px;padding:18px;margin-top:35px;gap:20px}
+.dt-about-demo-stats>div{display:flex;flex-direction:column;gap:7px}
+.dt-about-demo-stats>div+div{border-left:1px solid var(--dt-line);padding-left:24px}
+.dt-about-demo-stats strong{font:600 46px/1.1 "Plus Jakarta Sans",sans-serif;color:var(--dt-ink)}
+.dt-about-demo-stats span{font-size:14px;line-height:23px;color:var(--dt-ink)}
+@media(max-width:1100px){.dt-about-demo{gap:35px;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr)}.dt-about-demo-heading{grid-template-columns:1fr;gap:15px}.dt-about-demo-heading .dt-heading{font-size:38px}.dt-site .dt-about-demo-heading p{margin-top:0}.dt-about-demo-portrait{height:390px}.dt-about-demo-stats strong{font-size:38px}}
+@media(max-width:800px){.dt-about-demo{grid-template-columns:1fr;gap:30px}.dt-about-demo-heading{grid-template-columns:1.5fr 1fr;gap:25px}.dt-about-demo-side{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}.dt-about-demo-portrait{height:300px}.dt-about-demo-stats{margin:0}.dt-about-demo-wide{height:300px}}
+@media(max-width:540px){.dt-about-demo-heading{grid-template-columns:1fr;gap:20px}.dt-about-demo-heading .dt-heading{font-size:34px}.dt-about-demo-side{grid-template-columns:1fr}.dt-about-demo-portrait{height:350px}.dt-about-demo-wide{height:240px}.dt-about-demo-stats{padding:22px}.dt-about-demo-stats span{font-size:13px}}
+
+/* A horizontal carousel must never create a nested vertical scroll area. */
+.dt-service-rail{overflow-y:hidden;overscroll-behavior-x:contain;overscroll-behavior-y:auto}
+
+.dt-home-refined .dt-hero-photo>.photo{width:100%;height:100%;object-fit:cover;filter:none}
+.dt-home-refined .dt-hero-shade{background:linear-gradient(90deg,#0e1f28c9,#0e1f2850 60%,#0e1f2810)}
+.dt-home-refined .dt-heading{font-weight:500;letter-spacing:-1.5px;line-height:1.15}
+.dt-home-refined .dt-hero-content h1{font-weight:600;letter-spacing:-2px}
+.dt-home-section-heading{display:flex;justify-content:space-between;align-items:end;gap:60px;margin-bottom:45px}
+.dt-home-section-heading .dt-heading{margin:0}.dt-home-section-heading>p{max-width:330px;margin-bottom:4px}
+.dt-home-service-layout{display:grid;grid-template-columns:1.12fr 1fr;gap:30px}
+.dt-home-service-lead>a{display:block;position:relative;height:700px;border-radius:30px;overflow:hidden;color:white}
+.dt-home-service-lead .photo{display:block;filter:none;transition:transform .8s}
+.dt-home-service-lead>a:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 25%,#0e1f28e6)}
+.dt-home-service-lead>a>div{position:absolute;bottom:45px;left:45px;right:45px;z-index:1}
+.dt-site .dt-home-service-lead h3{font-size:45px;line-height:1.15;color:white;font-weight:500;margin:18px 0}
+.dt-site .dt-home-service-lead p{color:#ffffffdb;max-width:380px}
+.dt-home-service-lead span:first-child,.dt-home-service-small span,.dt-home-plus-link>span{font-size:11px;letter-spacing:1px;text-transform:uppercase}
+.dt-home-inline-link{display:inline-flex;align-items:center;gap:25px;font-size:14px;font-weight:500}
+.dt-home-service-stack{display:flex;flex-direction:column;gap:25px}.dt-home-service-stack>div{flex:1;min-height:0}
+.dt-home-service-small{display:grid;grid-template-columns:43% 1fr;height:100%;min-height:260px;background:white;border-radius:30px;overflow:hidden}
+.dt-home-service-small .photo{display:block;filter:none;min-height:260px;transition:transform .8s}
+.dt-home-service-small>div{padding:35px 30px;position:relative}
+.dt-site .dt-home-service-small h3{font-size:29px;line-height:1.2;margin:16px 0;font-weight:500}
+.dt-site .dt-home-service-small p{font-size:14px;line-height:24px;padding-bottom:20px;margin:0}
+.dt-home-service-small>div>svg{position:absolute;bottom:25px;right:25px}
+.dt-home-service-lead>a:hover .photo,.dt-home-service-small:hover .photo{transform:scale(1.035)}
+.dt-home-plus-link{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:28px 32px;border-radius:25px;background:var(--dt-ink);color:white}
+.dt-home-plus-link>span{grid-column:1}.dt-home-plus-link strong{font:500 25px/1.3 "Plus Jakarta Sans",sans-serif}.dt-home-plus-link>svg{grid-column:2;grid-row:1/3}
+.dt-home-concierge{display:grid;grid-template-columns:1fr 1.1fr;border-radius:30px;overflow:hidden;background:var(--dt-ink);color:white}
+.dt-home-concierge-photo{position:relative;min-height:760px;overflow:hidden}.dt-home-concierge-photo>.photo{position:absolute;inset:0;filter:none;object-position:40% center}
+.dt-home-concierge-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,#0e1f28dd)}
+.dt-home-concierge-photo>div{position:absolute;left:45px;right:35px;bottom:45px;z-index:1}.dt-home-concierge-photo>div>span{font:400 40px/1.2 "Plus Jakarta Sans",sans-serif;letter-spacing:4px}.dt-home-plus-symbol{font-size:55px}
+.dt-site .dt-home-concierge-photo p{color:white;font-size:20px;line-height:30px;margin:25px 0 0}
+.dt-home-concierge-copy{padding:60px 55px;background:var(--dt-ink) url('/images/doctean/pattern.webp');background-size:288px;background-blend-mode:soft-light}
+.dt-home-concierge-copy .dt-eyebrow{background:#ffffff14;color:white}.dt-home-concierge-copy .dt-heading{color:white;font-size:48px;margin:20px 0 25px}
+.dt-site .dt-home-concierge-copy p{color:#ffffffc9;font-size:14px;line-height:25px}
+.dt-home-concierge-points{display:flex;gap:12px 24px;flex-wrap:wrap;padding-bottom:25px;border-bottom:1px solid #ffffff25;margin-bottom:25px}.dt-home-concierge-points span{font-size:11px;line-height:20px}.dt-home-concierge-points span:before{content:"+";margin-right:8px}
+.dt-site .dt-home-concierge-copy h3{font-size:26px;line-height:1.3;color:white;font-weight:500;margin-bottom:22px}
+.dt-home-tier-selector{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.dt-home-tier-selector button{padding:20px 15px;border:1px solid #ffffff40;border-radius:20px;background:transparent;color:white;display:flex;flex-direction:column;align-items:start;text-align:left;gap:12px;transition:background .25s,color .25s,transform .25s}.dt-home-tier-selector button:hover{transform:translateY(-3px)}.dt-home-tier-selector button[aria-pressed=true]{background:var(--dt-pale);color:var(--dt-ink)}
+.dt-home-tier-selector small{font-size:8px;letter-spacing:1px}.dt-home-tier-selector strong{font:400 35px/1 "Plus Jakarta Sans",sans-serif}.dt-home-tier-selector span{display:flex;gap:8px;align-items:center;font-size:10px}
+.dt-site .dt-home-concierge-copy .dt-home-tier-note{font-size:11px;line-height:20px;margin:18px 0 25px}.dt-home-concierge-copy>.dt-button{background:white;color:var(--dt-ink);font-size:11px;padding:18px 22px}.dt-home-concierge-more{display:inline-flex;align-items:center;gap:12px;font-size:12px;margin:20px 0 0 18px}
+.dt-home-journey-layout{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:stretch;margin-bottom:30px}.dt-home-journey-photo{position:relative;border-radius:30px;overflow:hidden;min-height:510px}.dt-home-journey-photo .photo{display:block;position:absolute;inset:0;filter:none}.dt-home-journey-photo>span{position:absolute;bottom:25px;left:25px;right:25px;background:white;border-radius:20px;padding:20px;font-size:17px;text-align:center}
+.dt-home-journey ol{list-style:none;padding:0;margin:0}.dt-home-journey li{display:flex;gap:25px;padding:0 0 28px;margin-bottom:25px;border-bottom:1px solid var(--dt-line)}.dt-home-journey li:last-child{border:0;margin-bottom:0;padding-bottom:0}.dt-home-journey li>span{font:400 34px/1.2 "Plus Jakarta Sans",sans-serif;color:var(--dt-accent);min-width:50px}.dt-site .dt-home-journey h3{font-size:24px;line-height:30px;margin:0 0 12px;font-weight:500}.dt-site .dt-home-journey li p{font-size:14px;line-height:24px;margin:0}
+.dt-home-wellbeing{display:grid;grid-template-columns:1.05fr 1fr;gap:80px;align-items:center;padding-bottom:10px}.dt-home-wellbeing .dt-heading{margin-top:20px;font-size:45px}.dt-home-wellbeing-copy>div{margin:35px 0}.dt-home-wellbeing article{padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid var(--dt-line)}.dt-site .dt-home-wellbeing article h3{font-size:21px;line-height:29px;margin:0 0 10px;font-weight:500}.dt-site .dt-home-wellbeing article p{font-size:14px;line-height:24px;margin:0}
+.dt-home-wellbeing-images{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}.dt-home-wellbeing-images .photo{display:block;height:470px;border-radius:120px 120px 30px 30px;filter:none}.dt-home-wellbeing-images .photo:nth-child(2){margin-top:95px;border-radius:30px 30px 120px 120px}.dt-home-wellbeing-images>span{grid-column:1/-1;font-size:12px;text-align:center;letter-spacing:1px}
+.dt-home-coverage{display:grid;grid-template-columns:1.12fr 1fr;gap:80px;align-items:center}.dt-home-coverage-main .dt-heading{margin-top:20px;font-size:45px}.dt-home-counties{display:flex;flex-wrap:wrap;gap:14px 22px;margin:30px 0}.dt-home-counties span{display:flex;align-items:center;gap:7px;font-size:13px}.dt-home-counties svg{color:var(--dt-accent)}
+.dt-home-uk-note{display:flex;gap:18px;align-items:center;padding-top:25px;margin-top:30px;border-top:1px solid var(--dt-line)}.dt-home-uk-note>div{display:flex;flex-direction:column;gap:6px}.dt-home-uk-note strong{font-weight:500;font-size:16px}.dt-home-uk-note span{font-size:12px;color:var(--dt-muted)}
+.dt-home-nigeria{position:relative;border-radius:30px;overflow:hidden;min-height:560px;color:white}.dt-home-nigeria>.photo{position:absolute;inset:0;filter:none}.dt-home-nigeria:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent,#0e1f28ee)}.dt-home-nigeria>div{position:absolute;left:40px;right:40px;bottom:35px;z-index:1}.dt-home-nigeria>div>span{font-size:11px;letter-spacing:2px}.dt-site .dt-home-nigeria h3{font-weight:500;font-size:38px;line-height:1.2;color:white;margin:18px 0}.dt-site .dt-home-nigeria p{font-size:14px;line-height:24px;color:#ffffffd9}.dt-home-nigeria a{display:inline-flex;gap:20px;align-items:center;font-size:14px}
+.dt-home-refined .dt-treatment{padding:65px 0;margin:0 22px 80px;border-radius:30px}.dt-home-refined .dt-treatment .dt-enquiry{gap:70px;padding:0 40px;grid-template-columns:1fr 1fr}.dt-home-refined .dt-treatment .dt-enquiry-copy{padding-top:65px}
+@media(max-width:1100px){.dt-home-refined .dt-heading{font-size:40px}.dt-home-section-heading{gap:35px}.dt-home-service-layout{gap:22px}.dt-home-service-lead>a>div{left:30px;right:30px;bottom:35px}.dt-home-service-small{grid-template-columns:40% 1fr}.dt-home-service-small>div{padding:25px 20px}.dt-home-concierge-copy{padding:45px 30px}.dt-home-journey-layout,.dt-home-wellbeing,.dt-home-coverage{gap:40px}.dt-home-wellbeing-images .photo{height:410px}.dt-home-refined .dt-treatment .dt-enquiry{gap:40px;padding:0 30px}}
+@media(max-width:800px){.dt-home-section-heading{display:block}.dt-home-section-heading>p{max-width:540px;margin-top:25px}.dt-home-service-layout,.dt-home-concierge,.dt-home-journey-layout,.dt-home-wellbeing,.dt-home-coverage{grid-template-columns:1fr}.dt-home-service-lead>a{height:540px}.dt-home-service-small{min-height:240px}.dt-home-service-small .photo{min-height:240px;height:240px}.dt-home-concierge-photo{min-height:470px}.dt-home-concierge-copy{padding:45px 35px}.dt-home-journey-photo{min-height:380px}.dt-home-wellbeing-images{max-width:600px}.dt-home-wellbeing-images .photo{height:370px}.dt-home-wellbeing-images .photo:nth-child(2){margin-top:60px}.dt-home-nigeria{min-height:480px}.dt-home-refined .dt-treatment{margin:0 22px 48px;padding:45px 0}.dt-home-refined .dt-treatment .dt-enquiry{grid-template-columns:1fr;padding:0 25px}.dt-home-refined .dt-treatment .dt-enquiry-copy{padding-top:0}}
+@media(max-width:540px){.dt-home-refined .dt-heading{font-size:33px;letter-spacing:-.9px}.dt-home-refined .dt-hero-content h1{letter-spacing:-1.4px}.dt-home-section-heading{margin-bottom:30px}.dt-home-service-lead>a{height:500px}.dt-site .dt-home-service-lead h3{font-size:36px}.dt-home-service-small{grid-template-columns:38% 1fr;min-height:250px}.dt-home-service-small .photo{height:100%;min-height:250px}.dt-home-service-small>div{padding:24px 18px}.dt-site .dt-home-service-small h3{font-size:24px}.dt-site .dt-home-service-small p{font-size:12px;line-height:21px}.dt-home-service-small span{font-size:8px}.dt-home-plus-link{padding:25px}.dt-home-plus-link strong{font-size:21px}.dt-home-concierge-photo{min-height:400px}.dt-home-concierge-copy{padding:40px 24px}.dt-home-concierge-photo>div{left:28px}.dt-home-concierge-photo>div>span{font-size:32px}.dt-home-tier-selector{gap:8px}.dt-home-tier-selector button{padding:17px 10px}.dt-home-tier-selector small{font-size:7px}.dt-home-concierge-more{margin-left:0}.dt-home-journey-layout{gap:30px}.dt-home-journey-photo{min-height:300px}.dt-home-journey li{gap:16px}.dt-home-journey li>span{font-size:28px;min-width:35px}.dt-site .dt-home-journey h3{font-size:22px}.dt-home-wellbeing-images{gap:15px}.dt-home-wellbeing-images .photo{height:280px}.dt-home-counties{gap:15px}.dt-home-counties span{font-size:12px}.dt-home-nigeria>div{left:28px;right:28px}.dt-site .dt-home-nigeria h3{font-size:33px}.dt-home-refined .dt-treatment{margin:0 15px 40px;padding:35px 0}.dt-home-refined .dt-treatment .dt-enquiry{padding:0 18px}}
+
+/* Hero navigation and assessment links */
+.dt-hero-arrow{z-index:2;width:58px;height:58px;outline:0;border:7px solid var(--dt-pale);background:#fff;color:var(--dt-ink);box-sizing:content-box}
+.dt-hero-arrow.is-prev{left:-9px;border-left:0;border-radius:0 50% 50% 0}
+.dt-hero-arrow.is-next{right:-9px;border-right:0;border-radius:50% 0 0 50%}
+.dt-hero-arrow:focus-visible{outline:3px solid var(--dt-accent);outline-offset:3px}
+.dt-hero-arrow:hover{background:var(--dt-accent);color:#fff}
+.dt-hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.dt-hero-actions a{white-space:normal}
+.dt-hero-actions a:nth-child(2){border-color:#fff;color:#fff}
+@media(max-width:767px){.dt-hero-arrow{display:grid;width:40px;height:40px;border-width:5px}.dt-hero-arrow svg{width:22px}.dt-hero-actions{gap:10px;margin-top:24px}.dt-hero-actions a{font-size:11px;padding:15px 19px}}
+
+/* Circular controls seated in concave hero edges, matching the reference. */
+.dt-hero-arrow{width:46px;height:46px;box-sizing:border-box;border:0!important;border-radius:50%!important;background:#fff;color:var(--dt-ink);outline:0;isolation:isolate;overflow:visible}
+.dt-hero-arrow.is-prev{left:4px}.dt-hero-arrow.is-next{right:4px}
+.dt-hero-arrow:before{content:"";position:absolute;z-index:-2;width:60px;height:116px;top:50%;transform:translateY(-50%);background:var(--dt-pale);mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 116'%3E%3Cpath d='M0 0C0 23 0 31 25 32C44 32 54 43 54 58C54 73 44 84 25 84C0 85 0 93 0 116Z'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+.dt-hero-arrow.is-prev:before{left:-4px}.dt-hero-arrow.is-next:before{right:-4px;transform:translateY(-50%) scaleX(-1)}
+.dt-hero-arrow:after{content:"";position:absolute;inset:0;border-radius:50%;background:#fff;z-index:-1;transition:background .25s}
+.dt-hero-arrow svg{width:25px;height:25px;position:relative}
+.dt-hero-arrow:hover:after{background:var(--dt-accent)}
+.dt-hero-arrow:hover{color:#fff;background:transparent}
+@media(max-width:767px){.dt-hero-arrow{width:42px;height:42px}.dt-hero-arrow svg{width:23px;height:23px}}
+
+.dt-welcome-care{padding-top:90px;padding-bottom:90px;align-items:stretch}.dt-welcome-care .dt-about-demo-heading{grid-template-columns:1.6fr 1fr;gap:30px}.dt-site .dt-welcome-care .dt-about-demo-heading p{margin:0 0 15px;font-size:14px;line-height:23px}.dt-welcome-care .dt-about-demo-heading .dt-heading{font-size:46px;line-height:1.22}.dt-welcome-care .dt-about-demo-wide .photo,.dt-welcome-care .dt-about-demo-portrait .photo{width:100%;height:100%;object-fit:cover;display:block}.dt-welcome-care .dt-about-demo-side{display:grid;grid-template-rows:minmax(350px,1fr) auto;gap:35px}.dt-welcome-care .dt-about-demo-portrait{height:100%;min-height:350px}.dt-welcome-care .dt-about-demo-stats{margin-top:0}.dt-welcome-care .dt-about-demo-wide img,.dt-welcome-care .dt-about-demo-portrait img{transition:transform .7s}.dt-welcome-care .dt-about-demo-wide:hover img,.dt-welcome-care .dt-about-demo-portrait:hover img{transform:scale(1.035)}
+@media(max-width:1100px){.dt-welcome-care .dt-about-demo-heading{grid-template-columns:1fr}.dt-welcome-care .dt-about-demo-heading .dt-heading{font-size:38px}}
+@media(max-width:800px){.dt-welcome-care{padding-block:60px}.dt-welcome-care .dt-about-demo-heading{grid-template-columns:1.2fr 1fr}.dt-welcome-care .dt-about-demo-side{grid-template-rows:auto;grid-template-columns:1fr 1fr;align-items:center}.dt-welcome-care .dt-about-demo-portrait{height:330px;min-height:0}}
+@media(max-width:540px){.dt-welcome-care{padding-block:45px}.dt-welcome-care .dt-about-demo-heading{grid-template-columns:1fr;gap:22px}.dt-welcome-care .dt-about-demo-heading .dt-heading{font-size:34px}.dt-welcome-care .dt-about-demo-side{grid-template-columns:1fr;gap:25px}.dt-welcome-care .dt-about-demo-portrait{height:350px}}
+
+.dt-causes{padding-top:20px;padding-bottom:85px}.dt-causes-heading{text-align:center;margin-bottom:45px}.dt-causes-heading .dt-eyebrow{margin-bottom:17px}.dt-site .dt-causes-heading h2{font:600 clamp(30px,3.2vw,46px)/1.22 "Plus Jakarta Sans",sans-serif;letter-spacing:-1.2px;margin:0;color:var(--dt-ink)}.dt-causes-carousel{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}.dt-causes-track{display:flex;width:max-content;animation:dt-causes-flow 32s linear infinite}.dt-causes-set{display:flex;gap:60px;padding-right:60px;align-items:center}.dt-cause-logo{display:flex;align-items:center;gap:12px;width:175px;height:105px;color:var(--dt-ink);opacity:.45;transition:opacity .3s,transform .3s}.dt-cause-logo>span{font:600 19px/1.2 "Plus Jakarta Sans",sans-serif}.dt-cause-logo small{display:block;font-size:10px;letter-spacing:3px;font-weight:400;margin-top:8px}.dt-cause-logo:hover{opacity:1;transform:translateY(-3px)}.dt-causes-carousel:hover .dt-causes-track,.dt-causes-carousel:focus-within .dt-causes-track,.dt-causes-carousel.is-still .dt-causes-track{animation-play-state:paused}.dt-causes-carousel:focus-visible{outline:2px solid var(--dt-accent);outline-offset:6px}@keyframes dt-causes-flow{to{transform:translateX(-50%)}}@media(max-width:600px){.dt-causes{padding-bottom:55px}.dt-causes-heading{margin-bottom:25px}.dt-causes-set{gap:25px;padding-right:25px}.dt-cause-logo{width:150px}.dt-site .dt-causes-heading h2{letter-spacing:-.7px}}@media(prefers-reduced-motion:reduce){.dt-causes-track{animation:none}}
+
+.dt-cause-logo{width:230px;justify-content:center;opacity:1}.dt-cause-logo img{display:block;max-width:100%;width:auto;max-height:86px;height:auto;object-fit:contain;transition:transform .3s}.dt-cause-logo:hover img{transform:scale(1.04)}@media(max-width:600px){.dt-cause-logo{width:180px}.dt-cause-logo img{max-height:70px}}
+
+.dt-care-services{margin:0 22px 80px;padding:85px 0;border-radius:30px}.dt-care-services .dt-section-title{max-width:1000px;margin:0 auto 55px;text-align:center}.dt-care-services .dt-section-title .dt-heading{margin-bottom:20px}.dt-site .dt-care-services .dt-section-title>p{color:#fff;max-width:790px;margin:0 auto;font-size:16px;line-height:27px}.dt-care-services .dt-department-card{width:100%;text-align:left;cursor:pointer;padding:40px 30px 78px;min-height:285px;font-family:inherit}.dt-site .dt-care-services .dt-department-card p{display:block;-webkit-line-clamp:unset;padding-right:0;max-width:340px;line-height:25px}.dt-care-services .dt-department-card h3{margin-top:10px;margin-bottom:17px}.dt-care-services .dt-department-tag{font-weight:500}.dt-care-learn{display:block;font-size:11px;font-weight:600;margin-top:20px;max-width:calc(100% - 60px)}.dt-care-services .dt-department-card:focus-visible{outline:2px solid white;outline-offset:5px}.dt-care-dialog{position:fixed;inset:0;margin:auto;width:min(580px,calc(100% - 40px));max-height:85vh;overflow:auto;padding:50px 40px;border:0;border-radius:30px;color:var(--dt-ink);background:var(--dt-pale)}.dt-care-dialog::backdrop{background:#071726b8;backdrop-filter:blur(5px)}.dt-care-dialog-close{position:absolute;top:18px;right:18px;padding:5px;cursor:pointer}.dt-site .dt-care-dialog h2{font-size:36px;line-height:1.2;margin:20px 0}.dt-site .dt-care-dialog p{font-size:15px;line-height:26px;margin-bottom:20px}.dt-care-dialog .dt-button{margin-top:8px}@media(max-width:600px){.dt-care-services{margin:0 15px 45px;padding:50px 0}.dt-care-services .dt-section-title{margin-bottom:30px}.dt-care-services .dt-department-card{min-height:275px}.dt-care-dialog{padding:45px 25px}.dt-site .dt-care-dialog h2{font-size:30px}}
+
+/* Personal care journey: quiet editorial introduction and continuous timeline. */
+.dt-care-timeline{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:115px;padding-top:20px;padding-bottom:100px;align-items:start}.dt-timeline-sticky{position:sticky;top:140px}.dt-timeline-intro{height:100%;min-width:0}.dt-timeline-intro .dt-eyebrow{margin-bottom:24px}.dt-site .dt-timeline-intro h2{font-size:52px;line-height:1.13;font-weight:600;letter-spacing:-1.7px;margin-bottom:25px}.dt-site .dt-timeline-intro>div>p{font-size:15px;line-height:27px;max-width:430px;margin:0 0 32px}.dt-timeline-photo{height:300px;position:relative;border-radius:30px;overflow:hidden;margin-bottom:30px}.dt-timeline-photo>.photo{display:block;width:100%;height:100%;object-fit:cover;transition:transform .8s}.dt-timeline-photo:hover>.photo{transform:scale(1.035)}.dt-timeline-photo>span{position:absolute;bottom:18px;left:18px;padding:15px 22px;display:flex;align-items:center;gap:15px;border-radius:18px;background:#fffffff2;color:var(--dt-ink);font:500 13px/1.6 "Plus Jakarta Sans",sans-serif;box-shadow:0 10px 25px #00122b0a}.dt-timeline-photo>span svg{color:var(--dt-accent)}.dt-timeline-intro .dt-button{font-size:11px;padding:17px 25px}.dt-timeline-steps{list-style:none;margin:0;padding:0 0 0 38px;position:relative}.dt-timeline-steps:before{content:"";position:absolute;left:6px;top:36px;bottom:36px;width:1px;background:linear-gradient(var(--dt-accent),var(--dt-line) 55%,var(--dt-accent))}.dt-timeline-steps>li{position:relative;padding:0 0 27px}.dt-timeline-steps>li:last-child{padding-bottom:0}.dt-timeline-node{position:absolute;left:-38px;top:35px;width:13px;height:13px;display:grid;place-items:center;border-radius:50%;background:var(--dt-pale);border:1px solid var(--dt-accent);box-shadow:0 0 0 7px var(--dt-pale)}.dt-timeline-node>span{width:5px;height:5px;border-radius:50%;background:var(--dt-accent)}.dt-timeline-step{border:1px solid var(--dt-line);border-radius:26px;padding:26px 32px 24px;background:linear-gradient(135deg,#ffffffed,#ffffff8c);box-shadow:0 8px 25px #07172603;transition:border-color .3s,box-shadow .3s,transform .3s}.dt-timeline-step:hover{border-color:var(--dt-accent);transform:translateX(5px);box-shadow:0 15px 35px #07172608}.dt-timeline-step-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px;color:var(--dt-accent)}.dt-timeline-number{font:400 45px/1 "Plus Jakarta Sans",sans-serif;letter-spacing:-2px}.dt-site .dt-timeline-step h3{font-size:23px;line-height:1.3;font-weight:600;letter-spacing:-.6px;margin:0 0 13px}.dt-site .dt-timeline-step p{font-size:13px;line-height:24px;margin:0 0 20px;color:var(--dt-muted)}.dt-timeline-step-caption{display:block;border-top:1px solid var(--dt-line);padding-top:12px;font-size:8px;letter-spacing:1.6px;text-transform:uppercase;color:var(--dt-accent)}@media(max-width:1100px){.dt-care-timeline{gap:65px}.dt-site .dt-timeline-intro h2{font-size:44px}.dt-timeline-step{padding:25px}}@media(max-width:800px){.dt-care-timeline{grid-template-columns:1fr;gap:45px;padding-bottom:65px}.dt-timeline-sticky{position:static}.dt-timeline-photo{max-width:600px;height:310px}.dt-site .dt-timeline-intro>div>p{max-width:600px}.dt-timeline-steps{max-width:700px}.dt-timeline-step:hover{transform:none}}@media(max-width:540px){.dt-care-timeline{padding-top:0;padding-bottom:45px;gap:35px}.dt-site .dt-timeline-intro h2{font-size:36px;letter-spacing:-1px}.dt-timeline-photo{height:240px}.dt-timeline-intro .dt-button{font-size:10px;padding:17px 20px}.dt-timeline-steps{padding-left:30px}.dt-timeline-node{left:-30px}.dt-timeline-step{padding:23px}.dt-site .dt-timeline-step h3{font-size:22px}.dt-timeline-number{font-size:37px}}@media(prefers-reduced-motion:reduce){.dt-timeline-step,.dt-timeline-photo>.photo{transition:none}.dt-timeline-step:hover{transform:none}}
+
+/* Home 04 reference: portrait, drop cap introduction and circular icon rows. */
+.dt-why-families{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:60px;max-width:1440px;align-items:stretch;padding-top:0;padding-bottom:100px}.dt-why-photo{position:relative;border-radius:30px;overflow:hidden;min-height:700px}.dt-why-photo>.photo{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:62% center;transition:transform .8s ease}.dt-why-photo:hover>.photo{transform:scale(1.025)}.dt-why-copy{padding-block:45px}.dt-why-copy .dt-eyebrow{margin-bottom:18px}.dt-site .dt-why-copy .dt-heading{font-size:48px;line-height:1.22;font-weight:600;letter-spacing:-1.3px;margin:0 0 23px}.dt-site .dt-why-introduction{font-size:15px;line-height:26px;color:var(--dt-ink);margin:0 0 23px}.dt-why-introduction:first-letter{float:left;font:600 50px/.95 "Plus Jakarta Sans",sans-serif;color:var(--dt-accent);padding:5px 9px 0 0}.dt-why-reasons{display:grid;gap:24px}.dt-why-reason{display:grid;grid-template-columns:70px minmax(0,1fr);gap:20px;align-items:start}.dt-why-icon{height:70px;width:70px;border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--dt-ink);transition:background .3s,color .3s,transform .3s}.dt-why-reason:hover .dt-why-icon{background:var(--dt-accent);color:#fff;transform:translateY(-2px)}.dt-site .dt-why-reason h3{font-size:25px;line-height:1.3;letter-spacing:-.5px;font-weight:600;margin:3px 0 10px}.dt-site .dt-why-reason p{font-size:14px;line-height:25px;margin:0;color:var(--dt-ink)}@media(max-width:1200px){.dt-why-families{gap:40px}.dt-site .dt-why-copy .dt-heading{font-size:40px}.dt-site .dt-why-reason h3{font-size:23px}.dt-why-copy{padding-block:25px}.dt-why-reason{gap:17px}}@media(max-width:900px){.dt-why-families{grid-template-columns:1fr;gap:35px;padding-bottom:65px}.dt-why-photo{min-height:0;height:480px}.dt-why-photo>.photo{object-position:center 45%}.dt-why-copy{padding:0}.dt-site .dt-why-copy .dt-heading{max-width:700px}.dt-why-reasons{gap:25px}}@media(max-width:540px){.dt-why-families{padding-bottom:45px;gap:30px}.dt-why-photo{height:380px}.dt-site .dt-why-copy .dt-heading{font-size:33px;letter-spacing:-.8px}.dt-why-reason{grid-template-columns:58px minmax(0,1fr);gap:16px}.dt-why-icon{width:58px;height:58px}.dt-why-icon svg{width:29px;height:29px}.dt-site .dt-why-reason h3{font-size:21px;margin-top:1px}.dt-site .dt-why-reason p{font-size:13px;line-height:24px}.dt-site .dt-why-introduction{font-size:14px;line-height:25px}}@media(prefers-reduced-motion:reduce){.dt-why-photo>.photo,.dt-why-icon{transition:none}.dt-why-reason:hover .dt-why-icon{transform:none}}
+
+/* Home 02 family reassurance panel. */
+.dt-family-support{max-width:1400px;display:grid;grid-template-columns:1fr 1fr;background:white;border-radius:30px;overflow:hidden;margin-bottom:85px;align-items:stretch}.dt-family-photo{position:relative;min-height:650px;border-radius:30px;overflow:hidden}.dt-family-photo>.photo{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:center;transition:transform .8s}.dt-family-photo:hover>.photo{transform:scale(1.025)}.dt-family-copy{position:relative;padding:65px 60px;display:flex;align-items:center}.dt-family-copy>div{position:relative;z-index:1;width:100%}.dt-family-number{position:absolute;right:15px;top:0;font:600 200px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:-10px;color:var(--dt-ink);opacity:.075;pointer-events:none}.dt-family-icon{width:150px;height:150px;border:2px solid var(--dt-pale);border-radius:50%;display:grid;place-items:center;margin-bottom:30px}.dt-family-icon>span{display:grid;place-items:center;width:110px;height:110px;border-radius:50%;color:white;background:var(--dt-accent);transition:transform .4s}.dt-family-icon:hover>span{transform:rotate(-7deg)}.dt-family-eyebrow{display:block;text-transform:uppercase;font-size:10px;line-height:1.7;letter-spacing:1.2px;color:var(--dt-accent);margin-bottom:12px}.dt-site .dt-family-copy h2{font:600 34px/1.24 'Plus Jakarta Sans',sans-serif;letter-spacing:-.8px;margin:0 0 23px}.dt-site .dt-family-copy p{font-size:14px;line-height:25px;color:var(--dt-ink);margin:0 0 17px}.dt-family-actions{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-top:27px}.dt-family-actions .dt-button{font-size:10px;padding:16px 23px}.dt-family-phone{display:inline-flex;gap:9px;align-items:center;font:500 12px/1.6 'Plus Jakarta Sans',sans-serif}.dt-family-phone:hover{color:var(--dt-accent)}@media(max-width:1100px){.dt-family-copy{padding:45px 35px}.dt-family-icon{width:120px;height:120px;margin-bottom:25px}.dt-family-icon>span{width:90px;height:90px}.dt-family-icon svg{width:46px;height:46px}.dt-family-number{font-size:170px}.dt-site .dt-family-copy h2{font-size:30px}.dt-family-photo{min-height:670px}}@media(max-width:800px){.dt-family-support{grid-template-columns:1fr;margin-bottom:55px}.dt-family-photo{min-height:0;height:400px}.dt-family-copy{padding:45px}.dt-family-number{top:20px;right:25px}.dt-family-icon{width:140px;height:140px}.dt-family-icon>span{width:105px;height:105px}.dt-family-copy h2{max-width:550px}}@media(max-width:540px){.dt-family-support{margin-bottom:40px}.dt-family-photo{height:310px}.dt-family-copy{padding:35px 25px}.dt-family-icon{width:115px;height:115px;margin-bottom:25px}.dt-family-icon>span{width:85px;height:85px}.dt-family-number{font-size:145px;right:20px;top:20px}.dt-site .dt-family-copy h2{font-size:28px;letter-spacing:-.5px}.dt-site .dt-family-copy p{font-size:13px;line-height:24px}.dt-family-actions{gap:20px}}@media(prefers-reduced-motion:reduce){.dt-family-photo>.photo,.dt-family-icon>span{transition:none}.dt-family-icon:hover>span{transform:none}}
+
+.dt-family-brandmark{width:250px;height:200px;display:block;color:var(--dt-ink);opacity:.075;letter-spacing:normal;top:0;right:15px}@media(max-width:1100px){.dt-family-brandmark{width:213px;height:170px}}@media(max-width:800px){.dt-family-brandmark{top:20px;right:25px}}@media(max-width:540px){.dt-family-brandmark{width:181px;height:145px;right:20px;top:20px}}
+
+.dt-site .dt-hero-actions .dt-button-outline{border-color:#fff;color:#fff}.dt-site .dt-hero-actions .dt-button-outline:hover,.dt-site .dt-hero-actions .dt-button-outline:focus-visible{background:#fff;border-color:#fff;color:var(--dt-accent)}
+
+/* Keep faces visible in the wide welcome crop and give the portrait assessment room. */
+.dt-welcome-care .dt-about-demo-wide .photo{object-position:center 30%}
+.dt-care-timeline .dt-timeline-photo{height:360px}
+.dt-care-timeline .dt-timeline-photo>.photo{object-position:center 25%}
+@media(max-width:540px){.dt-care-timeline .dt-timeline-photo{height:300px}}

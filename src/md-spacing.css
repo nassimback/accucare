@@ -1,0 +1,16 @@
+/* One spacing scale for Design 2. Adjacent white sections share one gap. */
+.alt-md{--md-section-space:100px;--md-content-space:50px}
+.alt-md .md-welcome .ref-md-intro{padding-top:var(--md-section-space)}
+.alt-md .md-welcome .ref-intro-body{margin-bottom:var(--md-section-space)}
+.alt-md .md-welcome .ref-md-stats{padding-block:var(--md-section-space)}
+.alt-md .md-causes{padding-top:0;padding-bottom:var(--md-section-space)}
+.alt-md .md-causes-heading{margin-bottom:var(--md-content-space)}
+.alt-md .md-care-services{padding-top:0;padding-bottom:var(--md-section-space)}
+.alt-md .md-care-heading{margin-bottom:var(--md-content-space)}
+.alt-md .md-care-timeline{padding-block:var(--md-section-space)}
+.alt-md .md-care-timeline-heading{margin-bottom:var(--md-section-space)}
+.alt-md .md-why-families{padding-block:var(--md-section-space)}
+.alt-md .md-contact{margin-top:0;padding-top:0;padding-bottom:var(--md-section-space)}
+.alt-md .ref-brand-divider{margin-top:0}
+@media(max-width:1100px){.alt-md{--md-section-space:80px;--md-content-space:40px}}
+@media(max-width:767px){.alt-md{--md-section-space:60px;--md-content-space:32px}}
