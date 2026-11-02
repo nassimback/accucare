@@ -1,3 +1,5 @@
+import RevisedAlternativeSite from './alternatives-revised';
+import RevisedDocteanSite from './doctean-revised';
 import ShowcaseLinks from './showcase-links';
 import "./homepage-only.css";
 
@@ -107,5 +109,5 @@ function Home() {
   );
 }
 
-export function Site({design='original'}){const location=useLocation();if(location.pathname!=='/')return <Navigate to={homeTarget(location.pathname+location.search+location.hash)} replace/>;return <><ShowcaseLinks/><PaletteSwitcher/><HomeLocationEffects design={design}/>{design==='doctean'?<DocteanSite/>:design!=='original'?<AlternativeSite design={design}/>:<><Header/><main id="main"><Home/></main><SupportingLinks/><Footer/></>}</>}
-export default function App(){const base=import.meta.env.BASE_URL.replace(/\/$/,'');const pathname=window.location.pathname.slice(base.length)||'/';const prefix=pathname.match(/^\/(design-[234])(?:\/|$)/)?.[1];if(prefix==='design-3'){window.location.replace(base+'/design-2/'+window.location.search+window.location.hash);return null;}const design=prefix==='design-2'?'md':prefix==='design-4'?'doctean':'md';return <BrowserRouter basename={base+(prefix?`/${prefix}`:'/')}><Site design={design}/></BrowserRouter>}
+export function Site({design='original'}){const location=useLocation();if(location.pathname!=='/')return <Navigate to={homeTarget(location.pathname+location.search+location.hash)} replace/>;return <><ShowcaseLinks/><PaletteSwitcher/><HomeLocationEffects design={design}/>{design==='md-revised'?<RevisedAlternativeSite design="md"/>:design==='doctean-revised'?<RevisedDocteanSite/>:design==='doctean'?<DocteanSite/>:design!=='original'?<AlternativeSite design={design}/>:<><Header/><main id="main"><Home/></main><SupportingLinks/><Footer/></>}</>}
+export default function App(){const base=import.meta.env.BASE_URL.replace(/\/$/,'');const pathname=window.location.pathname.slice(base.length)||'/';const prefix=pathname.match(/^\/(design-[24]-revised|design-[234])(?:\/|$)/)?.[1];if(prefix==='design-3'){window.location.replace(base+'/design-2/'+window.location.search+window.location.hash);return null;}const design=prefix==='design-2-revised'?'md-revised':prefix==='design-4-revised'?'doctean-revised':prefix==='design-2'?'md':prefix==='design-4'?'doctean':'md';return <BrowserRouter basename={base+(prefix?`/${prefix}`:'/')}><Site design={design}/></BrowserRouter>}
