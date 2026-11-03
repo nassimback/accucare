@@ -3,9 +3,9 @@ import {motion,useReducedMotion,useScroll} from 'motion/react';
 import {ArrowUpRight} from '@phosphor-icons/react';
 import './md-care-timeline.css';
 const steps=[
- ['Initial Conversation','We listen to your concerns, answer your questions and learn what support may be needed.','client/care-04','A care professional listening to an older couple as they plan support'],
- ['Care Assessment','A member of our team meets with you, your family and relevant healthcare professionals where appropriate.','client/care-22','A care professional listening to an older man during an assessment'],
- ['Personalised Care Plan','We create a detailed plan covering routines, preferences, risks, health needs and personal goals.','client/care-02','Personal support designed around the individual'],
+ ['Initial Conversation','We listen to your concerns, answer your questions and learn what support may be needed.','personal-care','A care professional listening to an older couple as they plan support'],
+ ['Care Assessment','A member of our team meets with you, your family and relevant healthcare professionals where appropriate.','client/care-04','A care professional discussing support with an older woman'],
+ ['Personalised Care Plan','We create a detailed plan covering routines, preferences, risks, health needs and personal goals.','client/care-24','Personal support designed around the individual'],
  ['Carefully Matched Support','We introduce trained carers whose experience and approach are suited to your needs.','client/care-06','A carer offering thoughtful support and companionship at home'],
  ['Ongoing Review','We monitor care delivery, communicate clearly and adjust the plan whenever circumstances change.','client/care-20','A care professional checking in with an older woman at home']
 ];

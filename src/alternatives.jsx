@@ -296,16 +296,16 @@ function MDHome() {
             }}
           >
             <h1>
-              {"Personal care"}
+              {"Your care."}
               <br />
-              {"you trust."}
+              {"Your home."}
             </h1>
             <p>
-              {"Expert support. Genuine compassion."}
+              {"Clinically led care across London and surrounding counties."}
               <br />
-              {"Care built around you, at home."}
+              {"Live-in support nationwide. A personal approach at every stage."}
             </p>
-            <Action to={"/services/"}>{"Find your care"}</Action>
+            <Action>{"Arrange a Care Consultation"}</Action>
           </motion.div>
           <Reveal className={"md-hero-aside"} delay={0.4}>
             <div className={"md-hero-seal"}>
