@@ -2763,3 +2763,5 @@
 .dt-care-timeline .dt-timeline-photo{height:360px}
 .dt-care-timeline .dt-timeline-photo>.photo{object-position:center 25%}
 @media(max-width:540px){.dt-care-timeline .dt-timeline-photo{height:300px}}
+
+.dt-about-service-facts strong{font-size:25px}.dt-about-service-facts span{font-size:12px}@media(max-width:540px){.dt-about-service-facts strong{font-size:22px}}

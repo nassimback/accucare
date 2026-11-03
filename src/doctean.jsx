@@ -320,10 +320,10 @@ function DHeader() {
 const heroSlides = [
   {
     image: "hero-doctor",
-    top: "Better care for",
-    bottom: "your wellbeing.",
-    tag: "Welcome to AccuCare",
-    body: "Clinically led, personalised care that protects your dignity, supports your independence and helps you feel more at home.",
+    top: "Care at home.",
+    bottom: "Built around you.",
+    tag: "London & surrounding counties · UK live-in care",
+    body: "Clinically led home care, live-in support and private care concierge. Personal attention for every stage of life.",
   },
   {
     image: "hero-team",
@@ -444,13 +444,13 @@ function DAboutBlock() {
     <div className="dt-about-demo-main">
       <div className="dt-about-demo-heading">
         <DReveal><DEyebrow>Welcome to AccuCare</DEyebrow><DHeading>More Than Help Around the Home</DHeading></DReveal>
-        <DReveal><p>The right care should protect independence, preserve dignity and bring reassurance to the whole family.</p><p>At AccuCare, we take time to understand each person’s routines, preferences and circumstances. We then create a care plan built around the individual, whether they need occasional support, daily visits or continuous live-in care.</p><DButton to="https://n7hx8oeibctrgf.projectwebtec10.com/about-us/">Discover AccuCare</DButton></DReveal>
+        <DReveal><p>The right care should protect independence, preserve dignity and bring reassurance to the whole family.</p><p>At AccuCare, we take time to understand each person’s routines, preferences and circumstances. We then create a care plan built around the individual, whether they need occasional support, daily visits or continuous live-in care. We support children, young people, adults and older people, according to assessed needs.</p><DButton to="https://n7hx8oeibctrgf.projectwebtec10.com/about-us/">Discover AccuCare</DButton></DReveal>
       </div>
       <DReveal className="dt-about-demo-wide"><Photo name="personal-care" alt="An older couple discussing their care with a supportive professional"/></DReveal>
     </div>
     <div className="dt-about-demo-side">
       <DReveal className="dt-about-demo-portrait"><Photo name="client/care-14" alt="A carer offering personal support and reassurance to an older woman"/><DNotch className="dt-about-demo-notch"/><a href="https://n7hx8oeibctrgf.projectwebtec10.com/about-us/" className="dt-about-demo-link" aria-label="Discover AccuCare"><ArrowUpRight size={27}/></a></DReveal>
-      <DReveal className="dt-about-demo-stats"><div><strong>30+</strong><span>Years of Experience</span></div><div><strong>24/7</strong><span>Care and Support</span></div></DReveal>
+      <DReveal className="dt-about-demo-stats dt-about-service-facts"><div><strong>Personal</strong><span>Assessment-led care</span></div><div><strong>Connected</strong><span>Family communication</span></div></DReveal>
     </div>
   </section>;
 }
@@ -638,12 +638,12 @@ function DServices({ all = false }) {
   );
 }
 const careServiceItems = [
-  ["Live-in Care","At home",HouseLine,"Dedicated support in your own home, providing continuity, companionship and reassurance throughout the day and night.","Learn About Live-in Care","Your care is planned around your daily routines, personal preferences and agreed support needs. We work with you and your family to establish the right arrangements."],
-  ["Domiciliary Care","Daily living",UsersThree,"Flexible home visits designed to support daily routines, personal care and independent living.","Learn more","Visits can support everyday activities, meals, companionship and personal routines. We agree the timing and level of support with you during your assessment."],
-  ["Personal Care","Personal support",HandHeart,"Respectful assistance with washing, dressing, medication routines and other personal needs.","Learn more","We listen to your preferences and protect your privacy and dignity. Medication support is agreed within your care plan and delivered by appropriately trained staff."],
-  ["Dementia Care","Specialist support",ShieldCheck,"Familiar, patient and consistent care that supports people living with dementia and reassures their families.","Learn more","Familiar routines, clear communication and meaningful activities can help make everyday life more reassuring. Support is tailored to the person and reviewed as needs change."],
-  ["Palliative Care","Comfort & dignity",Heart,"Sensitive support focused on comfort, dignity and quality of life during a difficult and emotional time.","Learn more","We support personal routines, companionship and comfort, working alongside the appropriate clinical and palliative care teams. Clinical symptom management remains with suitably qualified professionals."],
-  ["Respite Care","Family support",Clock,"Reliable short-term support that allows family caregivers to rest, recover or manage other responsibilities.","Learn more","Whether you need a planned break or temporary assistance, we discuss the person’s routines and preferences so that support feels familiar and reassuring."]
+  ["Bespoke Home Care","Daily living",UsersThree,"Personal visits for daily routines, personal care, meals and companionship, shaped around your preferences and independence.","Explore home care","Support is tailored through assessment and an agreed care plan. We involve relevant healthcare professionals where specialist clinical input is required."],
+  ["Live-in & Overnight Care","At home",HouseLine,"A reassuring presence at home, with routines and overnight support agreed around your assessed requirements.","Explore live-in care","Support is tailored through assessment and an agreed care plan. We involve relevant healthcare professionals where specialist clinical input is required."],
+  ["Supported Living","Independence",HandHeart,"Practical, personal support to build daily living skills, participate in community life and make your own choices.","Explore supported living","Support is tailored through assessment and an agreed care plan. We involve relevant healthcare professionals where specialist clinical input is required."],
+  ["Specialist & Complex Care","Specialist support",ShieldCheck,"Assessed support for additional health, disability and mobility needs, including coordination with appropriate specialist professionals.","Explore specialist care","Support is tailored through assessment and an agreed care plan. We involve relevant healthcare professionals where specialist clinical input is required."],
+  ["Hospital-to-Home Care","Recovery",Clock,"A considered transition after illness, surgery or a hospital stay, with support for recovery routines and everyday life.","Explore recovery support","Support is tailored through assessment and an agreed care plan. We involve relevant healthcare professionals where specialist clinical input is required."],
+  ["Palliative & End-of-Life Care","Comfort & dignity",Heart,"Sensitive assistance focused on comfort, dignity and individual wishes, working alongside the appropriate clinical teams.","Explore palliative care","Support is tailored through assessment and an agreed care plan. We involve relevant healthcare professionals where specialist clinical input is required."]
 ];
 function DSpecialistDepartments() {
   const [selected,setSelected]=useState(null);
